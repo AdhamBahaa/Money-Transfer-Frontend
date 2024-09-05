@@ -1,0 +1,9 @@
+$font-stack: inter, sans-serif, serif;
+$theme-colors: (
+  "black": #24221e,
+  "purple": #871e35,
+);
+
+* {
+  font-family: $font-stack;
+}
