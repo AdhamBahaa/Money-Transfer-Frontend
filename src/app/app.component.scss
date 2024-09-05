@@ -1,9 +1,5 @@
-$font-stack: inter, sans-serif, serif;
-$theme-colors: (
-  "black": #24221e,
-  "purple": #871e35,
-);
-
+@use "shared/variables" as *;
 * {
   font-family: $font-stack;
+  color: map-get($map: $theme-colors, $key: "black");
 }

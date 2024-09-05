@@ -1,0 +1,52 @@
+@import "../variables";
+
+section {
+  background-color: #f3e9eb;
+}
+
+div {
+  img {
+    width: 595px;
+    // height: 584.6px;
+  }
+}
+
+div {
+  h5 {
+    color: map-get($map: $theme-colors, $key: "purple");
+    font-weight: 600;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    width: 560px;
+  }
+  p {
+    font-weight: 500;
+  }
+}
+
+#mobileId {
+  max-width: 1250px;
+}
+
+li {
+  gap: 12px;
+  p {
+    font-weight: 600;
+  }
+}
+
+.buttonDiv {
+  width: 100px;
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+svg {
+  margin-top: 3px;
+}
