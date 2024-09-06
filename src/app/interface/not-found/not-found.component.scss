@@ -1,0 +1,58 @@
+@import "../../shared/variables";
+
+* {
+  color: map-get($map: $theme-colors, $key: "black");
+}
+
+header {
+  background-image: url("../../../../public/background1.png");
+  background-color: #f3e9eb;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 96px 96px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 48px;
+}
+
+ul {
+  line-height: 24px;
+  .home {
+    color: #3c3a37;
+    font-weight: 500;
+    padding-right: 30px;
+  }
+  .error {
+    color: #871e35;
+    font-weight: 500;
+  }
+}
+
+.errorSection {
+  max-width: 565px;
+  padding: 80px 0px 100px 0px;
+  p {
+    color: #3c3a37;
+    line-height: 30px;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  img {
+    padding: 40px 0px;
+  }
+}
+
+h2 {
+  color: map-get($map: $theme-colors, $key: "black");
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.buttonReg {
+  margin-top: 20px;
+  padding: 16px 32px;
+  color: white;
+  background-color: map-get($theme-colors, "purple");
+}
