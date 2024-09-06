@@ -1,9 +1,5 @@
 @import "../variables";
 
-// nav {
-//   border: 1px solid;
-// }
-
 div {
   div {
     h2 {
@@ -12,9 +8,16 @@ div {
   }
 }
 
+.navBar {
+  padding: 10px 96px;
+}
+
 a {
   text-decoration: none;
   color: map-get($theme-colors, "black");
+  &:hover {
+    color: map-get($theme-colors, "purple");
+  }
 }
 
 a:active {
