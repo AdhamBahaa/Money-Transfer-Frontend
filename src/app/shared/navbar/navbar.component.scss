@@ -8,6 +8,26 @@ div {
   }
 }
 
+nav {
+  @include respond-to(x-large) {
+    .navBar {
+      padding: 10px 40px;
+      h2 {
+        font-size: 20px;
+        padding: 0px;
+      }
+      .buttonReg,
+      .buttonClass {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+      ul {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 .navBar {
   padding: 10px 96px;
 }

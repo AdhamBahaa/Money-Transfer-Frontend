@@ -2,6 +2,24 @@
 
 section {
   background-color: #f3e9eb;
+  @include respond-to(x-large) {
+    #mobileId {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .mobile {
+      max-width: 400px;
+    }
+    div {
+      h2 {
+        font-size: 35px;
+      }
+    }
+  }
+  @include respond-to(small) {
+    width: fit-content;
+  }
 }
 
 .mobile {
