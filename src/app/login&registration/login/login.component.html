@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<div class="content-login d-flex flex-column text-center">
+  <div class="content-login--header d-flex flex-column">
+    <h1>Login</h1>
+    <p>New Account? <a href="">Sign Up</a></p>
+  </div>
+  <div class="card-login d-flex flex-column mx-auto text-start shadow">
+    <div class="card-login--header d-flex flex-column">
+      <h2>Login here</h2>
+      <p>Welcome back.Login to your account</p>
+    </div>
+    <div class="card-login--form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <label for="email">Email</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          formControlName="email"
+        /><br />
+        <label for="pass">Password</label><br />
+        <input
+          type="password"
+          id="pass"
+          name="password"
+          formControlName="password"
+        />
+        <br />
+
+        <!-- <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Password"
+            (click)="togglePasswordVisibility()"
+          />
+          <button mat-icon-button matSuffix type="button">
+            <mat-icon>visibility_off</mat-icon>
+          </button>
+          <mat-error *ngIf="password?.invalid && password?.touched">
+            Password is required (minimum 6 characters).
+          </mat-error>
+        </mat-form-field> -->
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="login-button"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+    <p class="createAcc">
+      Don't have an account?
+      <a href="">Create Account</a>
+    </p>
+  </div>
+</div>
+
+<!-- <app-input></app-input> -->
+<app-small-footer></app-small-footer>

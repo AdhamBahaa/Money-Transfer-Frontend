@@ -1,0 +1,46 @@
+@import "../../shared/variables";
+
+.content-login {
+  margin-top: 134px;
+  min-height: 100vh;
+}
+
+.content-login--header {
+  gap: 16px;
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  p,
+  a {
+    color: #565552;
+    font-weight: 400;
+  }
+}
+
+.card-login {
+  margin-top: 32px;
+  width: 565px;
+  gap: 16px;
+  padding: 64px 32px;
+}
+
+.card-login--header {
+  gap: 8px;
+  h2 {
+    font-weight: 600;
+  }
+  p {
+    color: #565552;
+    font-weight: 400;
+  }
+}
+
+.createAcc {
+  color: #565552;
+  font-weight: 400;
+  a {
+    color: map-get($map: $theme-colors, $key: "purple");
+    font-weight: 500;
+  }
+}
