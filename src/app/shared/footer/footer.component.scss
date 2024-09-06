@@ -3,6 +3,9 @@
 section {
   color: white;
   background-color: #521220;
+  @include respond-to(samll){
+    
+  }
 }
 
 #footerId {
