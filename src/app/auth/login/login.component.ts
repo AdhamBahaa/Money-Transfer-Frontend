@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { SmallFooterComponent } from './shared/small-footer/small-footer.component';
-import { HeaderComponent } from './shared/header/header.component';
+
 import {
   FormControl,
   FormGroup,
@@ -9,7 +8,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
-import { passwordValidator } from './shared/utility-functions';
+import { SmallFooterComponent } from '../shared/small-footer/small-footer.component';
+import { HeaderComponent } from '../shared/header/header.component';
+import { passwordValidator } from '../shared/utility-functions';
 
 @Component({
   selector: 'app-login',

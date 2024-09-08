@@ -54,6 +54,7 @@
             </span>
 
             <br />
+            </div>
             @if(loginForm.get('password')?.errors?.['passwordStrength'] &&
             loginForm.get('password')?.touched){
             <small class="error">
@@ -62,7 +63,6 @@
               character (e.g., $%^).
             </small>
             }
-          </div>
         </div>
 
         <button
