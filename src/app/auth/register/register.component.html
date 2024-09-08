@@ -1,0 +1,210 @@
+<app-header></app-header>
+
+<div class="content-login d-flex flex-column text-center">
+  <div class="card-login d-flex flex-column mx-auto text-start shadow mb-5">
+    <div class="card-login--header d-flex flex-column">
+      <h2>Create Your Account</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+        tempor incididunt ut labore.
+      </p>
+    </div>
+
+    <div class="card-login--form">
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit(registerForm)"
+        class="login-form"
+      >
+        <div>
+          <label for="name" class="pb-3">Full name</label><br />
+          <input
+            type="text"
+            id="email"
+            name="name"
+            placeholder="Full name"
+            formControlName="name"
+            class="w-100 rounded border ps-4 py-3 mb-3"
+          />
+        </div>
+        <div>
+          <label for="email" class="pb-3">Email</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email address"
+            formControlName="email"
+            class="w-100 rounded border ps-4 py-3 mb-3"
+          /><br />
+          @if(registerForm.get('email')?.invalid &&
+          registerForm.get('email')?.dirty){
+          <small class="error">This field is required</small>
+          }
+        </div>
+        <div class="selectDiv">
+          <label for="country" class="pb-3">Country</label>
+          <select
+            id="country"
+            class="form-select form-select-lg ps-4 py-3 mb-3"
+            aria-label="Large select example"
+            formControlName="country"
+          >
+            <option selected>Choose your country</option>
+            <option value="uk">UK</option>
+            <option value="usa">USA</option>
+            <option value="egypt">Egypt</option>
+          </select>
+        </div>
+        <div>
+          <label for="" class="pb-3">Date of birth</label>
+          <div class="d-flex justify-content-between">
+            <div class="dayDiv">
+              <label for="day" class="pb-3">Day</label><br />
+              <input
+                type="number"
+                id="day"
+                name="day"
+                placeholder="DD"
+                formControlName="day"
+                maxlength="2"
+                class="w-100 rounded border ps-4 py-3 mb-3"
+              />
+            </div>
+            <div class="monthDiv">
+              <label for="month" class="pb-3">Month</label>
+              <select
+                id="month"
+                class="form-select form-select-lg ps-4 py-3 mb-3"
+                aria-label="Large select example"
+                formControlName="month"
+              >
+                <option selected>Month</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+            <div>
+              <label for="year" class="pb-3">Year</label>
+              <select
+                id="year"
+                class="form-select form-select-lg ps-4 py-3 mb-3"
+                aria-label="Large select example"
+                formControlName="year"
+              >
+                <option selected>YYYY</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="pass" class="pb-3 mt-3">Password</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="pass"
+              name="password"
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="************"
+              formControlName="password"
+              class="w-100 rounded border ps-4 py-3"
+              autocomplete="off"
+            /><span class="icon" (click)="togglePasswordVisibility()">
+              <i
+                class="fa pe-3"
+                [ngClass]="
+                  showPassword ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'
+                "
+              ></i>
+            </span>
+
+            <br />
+          </div>
+          @if(registerForm.get('password')?.errors?.['passwordStrength'] &&
+          registerForm.get('password')?.touched){
+          <small class="error">
+            Password must be at least 6 characters long and include at least one
+            uppercase letter, one lowercase letter, and one special character
+            (e.g., $%^).
+          </small>
+          }
+        </div>
+
+        <div>
+          <label for="pass" class="pb-3 mt-3">Confirm password</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="pass"
+              name="password"
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              placeholder="************"
+              formControlName="confirmPassword"
+              class="w-100 rounded border ps-4 py-3"
+              autocomplete="off"
+            /><span class="icon" (click)="toggleConfirmPasswordVisibility()">
+              <i
+                class="fa pe-3"
+                [ngClass]="
+                  showConfirmPassword
+                    ? 'fa-regular fa-eye'
+                    : 'fa-regular fa-eye-slash'
+                "
+              ></i>
+            </span>
+
+            <br />
+          </div>
+          @if((registerForm.get('password')?.value !==
+          registerForm.get('confirmPassword')?.value) &&
+          registerForm.get('confirmPassword')?.touched){
+          <small class="error">
+            Password and Confirm Password do not match.
+          </small>
+          }
+        </div>
+        <p class="lastParagraph">
+          The password should be at least eight characters long. To make it
+          stronger, use upper and lower case letters, numbers, and symbols like
+          (! " ? $ % ^ & )
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-outline-dark buttonClass mt-4 w-100"
+        >
+          Create Account
+        </button>
+      </form>
+    </div>
+    <p class="createAcc">
+      Already have an account?
+      <a href="">Login</a>
+    </p>
+  </div>
+</div>
+
+<!-- <app-input></app-input> -->
+<app-small-footer></app-small-footer>

@@ -41,7 +41,6 @@
               [type]="showPassword ? 'text' : 'password'"
               placeholder="************"
               formControlName="password"
-              (click)="togglePasswordVisibility()"
               class="w-100 rounded border ps-4 py-3"
               autocomplete="off"
             /><span class="icon" (click)="togglePasswordVisibility()">
@@ -54,15 +53,15 @@
             </span>
 
             <br />
-            </div>
-            @if(loginForm.get('password')?.errors?.['passwordStrength'] &&
-            loginForm.get('password')?.touched){
-            <small class="error">
-              Password must be at least 6 characters long and include at least
-              one uppercase letter, one lowercase letter, and one special
-              character (e.g., $%^).
-            </small>
-            }
+          </div>
+          @if(loginForm.get('password')?.errors?.['passwordStrength'] &&
+          loginForm.get('password')?.touched){
+          <small class="error">
+            Password must be at least 6 characters long and include at least one
+            uppercase letter, one lowercase letter, and one special character
+            (e.g., $%^).
+          </small>
+          }
         </div>
 
         <button
