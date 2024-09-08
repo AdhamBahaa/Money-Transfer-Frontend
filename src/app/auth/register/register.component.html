@@ -70,6 +70,10 @@
                 maxlength="2"
                 class="w-100 rounded border ps-4 py-3 mb-3"
               />
+              <!-- @if(registerForm.get('day')?.errors?.['maxlength'] &&
+              registerForm.get('day')?.dirty){
+              <small class="error">Invaild day</small>
+              } -->
             </div>
             <div class="monthDiv">
               <label for="month" class="pb-3">Month</label>

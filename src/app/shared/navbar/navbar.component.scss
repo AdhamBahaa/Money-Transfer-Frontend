@@ -48,6 +48,10 @@ li {
   font-weight: 500;
 }
 
+.pageList {
+  margin-right: 50px;
+}
+
 .buttonClass {
   padding: 16px 32px;
 }
@@ -58,39 +62,44 @@ li {
   background-color: map-get($theme-colors, "purple");
 }
 
-// .dropdown-content {
-//   display: none;
-//   position: absolute;
-//   background-color: #f9f9f9;
-//   min-width: 160px;
-//   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-//   z-index: 1;
-// }
+.userName {
+  color: #3c3a37;
+  font-family: inter;
+  font-weight: 600;
+  font-size: 20px;
+}
 
-// .dropdown-content a {
-//   float: none;
-//   color: black;
-//   padding: 12px 16px;
-//   text-decoration: none;
-//   display: block;
-//   text-align: left;
-// }
+.userInitials {
+  color: #3c3a37;
+  background-color: #e3e2e2;
+  padding: 10px;
+  margin-right: 5px;
+}
 
-// .dropdown-content a:hover {
-//   background-color: #ddd;
-// }
+.dropdown-toggle::after {
+  display: none !important;
+}
 
-// .dropdown:active .dropdown-content {
-//   display: block;
-// }
+.dropdown {
+  ul {
+    padding: 20px 20px;
+    li {
+      padding: 16px 8px;
+      &:hover {
+        color: map-get($map: $theme-colors, $key: "purple");
+      }
+    }
+  }
+}
 
-// .dropdown .dropbtn {
-//   font-size: 16px;
-//   border: none;
-//   outline: none;
-//   color: map-get($map: $theme-colors, $key: "black");
-//   padding: 14px 16px;
-//   background-color: inherit;
-//   font-family: inherit;
-//   margin: 0;
-// }
+.dropdown-item {
+  a {
+    color: #3c3a37;
+    font-weight: 500;
+    padding-bottom: 0px;
+  }
+}
+
+.dropdown-toggle:focus {
+  border: 0;
+}
