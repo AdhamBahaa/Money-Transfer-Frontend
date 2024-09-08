@@ -5,52 +5,69 @@
     <h1>Login</h1>
     <p>New Account? <a href="">Sign Up</a></p>
   </div>
-  <div class="card-login d-flex flex-column mx-auto text-start shadow">
+  <div class="card-login d-flex flex-column mx-auto text-start shadow mb-5">
     <div class="card-login--header d-flex flex-column">
       <h2>Login here</h2>
-      <p>Welcome back.Login to your account</p>
+      <p>Welcome back. Login to your account</p>
     </div>
-    <div class="card-login--form">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-        <label for="email">Email</label><br />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          formControlName="email"
-        /><br />
-        <label for="pass">Password</label><br />
-        <input
-          type="password"
-          id="pass"
-          name="password"
-          formControlName="password"
-        />
-        <br />
 
-        <!-- <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Password</mat-label>
+    <div class="card-login--form">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit(loginForm)"
+        class="login-form"
+      >
+        <div>
+          <label for="email" class="pb-3">Your email address</label><br />
           <input
-            matInput
-            [type]="showPassword ? 'text' : 'password'"
-            formControlName="password"
-            placeholder="Password"
-            (click)="togglePasswordVisibility()"
-          />
-          <button mat-icon-button matSuffix type="button">
-            <mat-icon>visibility_off</mat-icon>
-          </button>
-          <mat-error *ngIf="password?.invalid && password?.touched">
-            Password is required (minimum 6 characters).
-          </mat-error>
-        </mat-form-field> -->
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email@gmail.com"
+            formControlName="email"
+            class="w-100 rounded border ps-4 py-3"
+          /><br />
+          @if(loginForm.get('email')?.invalid && loginForm.get('email')?.dirty){
+          <small class="error">This field is required</small>
+          }
+        </div>
+        <div>
+          <label for="pass" class="pb-3 mt-3">Password</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="pass"
+              name="password"
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="************"
+              formControlName="password"
+              (click)="togglePasswordVisibility()"
+              class="w-100 rounded border ps-4 py-3"
+              autocomplete="off"
+            /><span class="icon" (click)="togglePasswordVisibility()">
+              <i
+                class="fa pe-3"
+                [ngClass]="
+                  showPassword ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'
+                "
+              ></i>
+            </span>
+
+            <br />
+            @if(loginForm.get('password')?.errors?.['passwordStrength'] &&
+            loginForm.get('password')?.touched){
+            <small class="error">
+              Password must be at least 6 characters long and include at least
+              one uppercase letter, one lowercase letter, and one special
+              character (e.g., $%^).
+            </small>
+            }
+          </div>
+        </div>
 
         <button
-          mat-raised-button
-          color="primary"
-          type="submit"
-          class="login-button"
-          [disabled]="loginForm.invalid"
+          type="button"
+          class="btn btn-outline-dark buttonClass mt-4 w-100"
         >
           Login
         </button>

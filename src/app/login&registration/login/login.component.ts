@@ -8,10 +8,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
+import { passwordValidator } from './shared/utility-functions';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +17,10 @@ import { NgIf } from '@angular/common';
   imports: [
     SmallFooterComponent,
     HeaderComponent,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
     NgIf,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -37,23 +33,20 @@ export class LoginComponent {
   constructor() {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-      ]),
+      password: new FormControl('', [Validators.required, passwordValidator()]),
     });
   }
 
-  onSubmit() {
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+  onSubmit(loginForm: FormGroup) {
     if (this.loginForm.valid) {
       console.log('Form Submitted', this.loginForm.value);
     } else {
       console.log('Form is invalid');
     }
-  }
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
   }
 
   get email() {
