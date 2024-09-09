@@ -24,6 +24,6 @@ export interface ILogin {
 // No models for logout and refresh
 
 export interface IResponseTokens {
-  accessToken: string;
   refreshToken: string;
+  accessToken: string;
 }

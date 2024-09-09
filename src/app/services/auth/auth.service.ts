@@ -7,7 +7,7 @@ import {
   IResponseTokens,
 } from '../../models/auth.model';
 import { Observable, tap } from 'rxjs';
-import { authAPI } from '../constants';
+import { authAPI } from '../constantsAPI';
 
 @Injectable({
   providedIn: 'root',
@@ -20,16 +20,25 @@ export class AuthService {
   }
 
   login(data: ILogin): Observable<IResponseTokens> {
-    return this.http.post(`${authAPI}/login`, data).pipe(
-      tap((response: any) => {
-        const accessToken: string = response.accessToken;
-        const refreshToken: string = response.refreshToken;
-
+    return this.http.post<IResponseTokens>(`${authAPI}/login`, data).pipe(
+      tap((response) => {
+        const { accessToken, refreshToken } = response;
         if (accessToken && refreshToken) {
           localStorage.setItem('accessToken', accessToken);
           localStorage.setItem('refreshToken', refreshToken);
         }
       })
     );
+  }
+
+  refresh(data: IResponseTokens): Observable<IResponseTokens> {
+    return this.http.post<IResponseTokens>(
+      `${authAPI}/refresh`,
+      data.refreshToken
+    );
+  }
+
+  logout(data: IResponseTokens): Observable<string> {
+    return this.http.post<string>(`${authAPI}/logout`, data);
   }
 }

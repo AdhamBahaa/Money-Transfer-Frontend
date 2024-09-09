@@ -25,6 +25,7 @@ import { ILogin } from '../../models/auth.model';
     ReactiveFormsModule,
     CommonModule,
   ],
+  providers: [AuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -71,13 +72,5 @@ export class LoginComponent {
     } else {
       console.log('Form is invalid');
     }
-  }
-
-  get email() {
-    return this.loginForm.get('email');
-  }
-
-  get password() {
-    return this.loginForm.get('password');
   }
 }
