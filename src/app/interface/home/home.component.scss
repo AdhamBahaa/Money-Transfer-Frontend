@@ -33,13 +33,39 @@ header {
   }
   .header-section-2 {
     width: 481px;
-    height: 360px;
+    @if (loggedin) {
+      height: 466px;
+    } @else {
+      height: 360px;
+    }
     top: 311px;
     left: 863px;
     padding: 32px;
     gap: 32px;
     border-radius: 8px;
     background-color: #ffffff;
+  }
+  .balance {
+    width: 417px;
+    height: 90px;
+    padding: 8px 16px 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: #f3e9eb;
+    .balance-text {
+      width: 385px;
+      height: 24px;
+      color: #521220;
+    }
+    .balance-amount {
+      width: 145px;
+      height: 42px;
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 42px;
+      color: #871e35;
+    }
   }
   .send-amount {
     width: 417px;

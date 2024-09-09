@@ -10,11 +10,17 @@
     >
     <div class="button-section">
       <button class="create-account-button">
-        <small class="body-medium">Create An Acount</small>
+        <small class="body-medium">{{ buttonContent }}</small>
       </button>
     </div>
   </div>
   <div class="header-section-2 d-flex flex-column">
+    @if(loggedIn){
+    <div class="balance d-flex flex-column">
+      <small class="body-medium balance-text">Current Balance</small>
+      <small class="balance-amount">10000EGP</small>
+    </div>
+    }
     <small class="send-amount body-medium" style="color: #24221e"
       >Send Amount</small
     >

@@ -8,4 +8,14 @@ import { MobileAppComponent } from '../../shared/mobile-app/mobile-app.component
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  buttonContent!: string;
+  loggedIn: boolean = true;
+  constructor() {
+    if (this.loggedIn) {
+      this.buttonContent = 'Create An Account';
+    } else {
+      this.buttonContent = 'Transfer Now';
+    }
+  }
+}
