@@ -3,3 +3,7 @@ export interface IFavourite {
   accountId: number;
   name: string;
 }
+
+export interface IMessage {
+  message: string;
+}

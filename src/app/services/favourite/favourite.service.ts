@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IFavourite } from '../../models/favourite.model';
+import { IFavourite, IMessage } from '../../models/favourite.model';
 import { Observable } from 'rxjs';
 import { favouriteAPI } from '../constantsAPI';
 
@@ -15,10 +15,12 @@ export class FavouriteService {
   }
 
   getFavourite(userId: number): Observable<IFavourite[]> {
-    return this.http.get<IFavourite[]>(`${favouriteAPI}/GetFavourite/${userId}`);
+    return this.http.get<IFavourite[]>(
+      `${favouriteAPI}/GetFavourite/${userId}`
+    );
   }
 
-  deleteFavourite(accountId: number): Observable<string> {
-    return this.http.delete<string>(`${favouriteAPI}/${accountId}`);
+  deleteFavourite(accountId: number): Observable<IMessage> {
+    return this.http.delete<IMessage>(`${favouriteAPI}/${accountId}`);
   }
 }

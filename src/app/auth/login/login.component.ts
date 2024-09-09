@@ -45,27 +45,25 @@ export class LoginComponent {
     this.showPassword = !this.showPassword;
   }
 
+  // if (this.loginForm.valid) {
+  //   console.log('Form Submitted', loginForm.value);
+  // } else {
+  //   console.log('Form is invalid');
+  // }
+  // Extract form values
+
   onSubmit(loginForm: FormGroup) {
-    // if (this.loginForm.valid) {
-    //   console.log('Form Submitted', loginForm.value);
-    // } else {
-    //   console.log('Form is invalid');
-    // }
     if (this.loginForm.valid) {
-      // Extract form values
       const loginData: ILogin = {
-        email: this.loginForm.get('email')?.value,
-        password: this.loginForm.get('password')?.value,
+        email: loginForm.get('email')?.value,
+        password: loginForm.get('password')?.value,
       };
 
-      // Call the login method with the extracted data
       this._authService.login(loginData).subscribe({
         next: (response) => {
-          // Handle successful login
           console.log('Login successful', response);
         },
         error: (error) => {
-          // Handle error
           console.error('Login failed', error);
         },
       });

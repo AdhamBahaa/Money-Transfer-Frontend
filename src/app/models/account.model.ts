@@ -43,3 +43,7 @@ export interface ITransactionShow {
   page: number;
   size: number;
 }
+
+export interface IBalance {
+  balance: number;
+}
