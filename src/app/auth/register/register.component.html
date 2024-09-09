@@ -20,7 +20,7 @@
           <label for="name" class="pb-3">Full name</label><br />
           <input
             type="text"
-            id="email"
+            id="name"
             name="name"
             placeholder="Full name"
             formControlName="name"
@@ -157,12 +157,11 @@
         </div>
 
         <div>
-          <label for="pass" class="pb-3 mt-3">Confirm password</label>
+          <label for="conPass" class="pb-3 mt-3">Confirm password</label>
           <div class="password-container">
             <input
               type="password"
-              id="pass"
-              name="password"
+              id="conPass"
               [type]="showConfirmPassword ? 'text' : 'password'"
               placeholder="************"
               formControlName="confirmPassword"
@@ -196,7 +195,7 @@
         </p>
 
         <button
-          type="button"
+          type="submit"
           class="btn btn-outline-dark buttonClass mt-4 w-100"
         >
           Create Account

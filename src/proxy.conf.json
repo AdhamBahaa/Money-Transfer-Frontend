@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://moneytransfer-s6gm.onrender.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

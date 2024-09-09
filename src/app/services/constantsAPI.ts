@@ -6,4 +6,4 @@ export const favouriteAPI =
 export const authAPI = 'https://moneytransfer-s6gm.onrender.com/api/v1/auth';
 
 export const accountAPI =
-  'https://moneytransfer-s6gm.onrender.com/api/v1/accounts/';
+  'https://moneytransfer-s6gm.onrender.com/api/v1/accounts';

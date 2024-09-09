@@ -18,7 +18,7 @@ export class AuthService {
   createUser(data: ICreateNewAuth): Observable<IAuthCreated> {
     return this.http.post<IAuthCreated>(`${authAPI}/create`, data);
   }
-
+  // /api/v1/auth/login`
   login(data: ILogin): Observable<IResponseTokens> {
     return this.http.post<IResponseTokens>(`${authAPI}/login`, data).pipe(
       tap((response) => {

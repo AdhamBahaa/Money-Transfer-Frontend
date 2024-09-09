@@ -4,7 +4,7 @@ export interface ICreateNewAuth {
   email: string;
   password: string;
   country: string;
-  dateOfBirth: Date;
+  dateofbirth: string;
 }
 
 // the data that will be send after I created the user

@@ -45,13 +45,6 @@ export class LoginComponent {
     this.showPassword = !this.showPassword;
   }
 
-  // if (this.loginForm.valid) {
-  //   console.log('Form Submitted', loginForm.value);
-  // } else {
-  //   console.log('Form is invalid');
-  // }
-  // Extract form values
-
   onSubmit(loginForm: FormGroup) {
     if (this.loginForm.valid) {
       const loginData: ILogin = {
