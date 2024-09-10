@@ -5,10 +5,12 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { HelpComponent } from './help/help.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { MyAccountComponent } from './my-account/my-account.component';
-import { RouterOutlet } from '@angular/router';
 
+
+import { MyAccountComponent } from './my-account/my-account.component';
+
+
+import { MoneyTransferComponent } from './money-transfer/money-transfer.component';
 @Component({
   selector: 'app-interface',
   standalone: true,
@@ -19,8 +21,11 @@ import { RouterOutlet } from '@angular/router';
     HelpComponent,
     NotFoundComponent,
     HomeComponent,
-    ProfileComponent,
+
     MyAccountComponent,
+
+    MoneyTransferComponent,
+
   ],
   templateUrl: './interface.component.html',
   styleUrl: './interface.component.scss',
