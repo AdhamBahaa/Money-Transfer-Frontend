@@ -20,7 +20,7 @@ export class PaymentComponent {
   recipientAccount: string = 'Account xxxx7890';
   amount: number = 1000;
   routeToHome() {
-    this._Router.navigate(['home']);
+    this._Router.navigate(['']);
   }
   addToFavourites() {}
 }
