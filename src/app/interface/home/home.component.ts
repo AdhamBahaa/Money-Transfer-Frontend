@@ -3,11 +3,19 @@ import { Router } from '@angular/router';
 import { MobileAppComponent } from '../../shared/mobile-app/mobile-app.component';
 import { NgIf } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { FooterComponent } from '../../shared/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MobileAppComponent, NgIf, FormsModule],
+  imports: [
+    MobileAppComponent,
+    NgIf,
+    FormsModule,
+    NavbarComponent,
+    FooterComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -27,6 +35,6 @@ export class HomeComponent {
   };
   onSubmit(form: NgForm) {}
   routeToMoneyTransfer() {
-    this._Router.navigate(['money-transfer']);
+    this._Router.navigate(['money-transfer/confirmation']);
   }
 }
