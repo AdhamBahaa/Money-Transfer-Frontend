@@ -1,0 +1,93 @@
+.Title {
+  font-family: "Inter", sans-serif; /* Ensure 'Inter' is available as a web font or installed locally */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: left;
+}
+
+.myPro {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.acc {
+  width: 811px;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+}
+
+.accNum {
+  width: 811px; /* Set the width to 811 pixels */
+  height: 56px; /* Set the height to 56 pixels */
+  padding: 16px 0 0 0; /* Padding: 16px on top, 0px on other sides */
+  gap: 0; /* Gap property isn't valid in standard CSS for block-level elements, so this is omitted */
+  border-radius: 8px 8px 0 0; /* Rounded corners: 8px on top-left and top-right, 0px on bottom-left and bottom-right */
+  display: flex; /* Assuming you want to use flexbox to apply 'justify' */
+  justify-content: space-between; /* Align items with space between them */
+  /* Set opacity to 0 (fully transparent) */
+  background-color: rgba(243, 233, 235, 1);
+  padding-left: 20px;
+  font-family: "Inter", sans-serif; /* Ensure 'Inter' is available as a web font or installed locally */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
+
+.accDet {
+  width: 811px; /* Set the width to 811 pixels */
+  height: 88px; /* Set the height to 88 pixels */
+  padding: 0 0 0 0; /* Padding: 16px on top, 0px on other sides */
+  gap: 0; /* Gap property: This is not applicable for block-level elements unless using flex or grid layout */
+  border-radius: 0 0 8px 8px; /* Rounded corners: 8px on bottom-left and bottom-right, no rounding on top-left and top-right */
+  display: flex;
+  flex-direction: row; /* Apply flex layout */
+  /* Distribute space between items */
+  /* Set opacity to 0 (fully transparent) */
+}
+
+.half1 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding-left: 16px;
+  // gap: 5px;
+}
+
+.half2 {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  padding-right: 16px;
+}
+
+.ad {
+  font-family: "Inter", sans-serif; /* Use 'Inter' font family with fallback to sans-serif */
+  font-size: 16px; /* Set font size to 16px */
+  font-weight: 500; /* Set font weight to 500 (Medium) */
+  line-height: 24px; /* Set line height to 24px */
+  text-align: left;
+  color: rgba(36, 34, 30, 1);
+}
+.rn {
+  font-family: "Inter", sans-serif; /* Use 'Inter' font family with fallback to sans-serif */
+  font-size: 16px; /* Set font size to 16px */
+  font-weight: 400; /* Set font weight to 400 (Regular) */
+  line-height: 24px; /* Set line height to 24px */
+  text-align: left;
+  color: rgba(75, 74, 71, 1);
+}
