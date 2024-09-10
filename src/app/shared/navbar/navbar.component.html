@@ -4,7 +4,7 @@
       <h2 class="pt-2">Speedo Transfer</h2>
     </div>
     <div class="d-flex justify-content-center align-items-center">
-      <ul class="d-flex pt-3 list-unstyled">
+      <ul class="d-flex pt-3 list-unstyled pageList">
         <a href="#"><li class="px-3">Home</li></a>
         <a href="#"><li class="px-3">Money Transfer</li></a>
         <a href="#"><li class="px-3">My Account</li></a>
@@ -13,30 +13,53 @@
 
       <!-- Next Section will be dependent on log-in -->
       <!-- Not Looged In -->
-      <div class="ps-3 d-flex">
+      <!-- <div class="ps-3 d-flex">
         <button type="button" class="btn btn-outline-dark buttonClass">
           Login
         </button>
         <button type="button" class="btn ms-3 buttonReg">Register Now</button>
-      </div>
+      </div> -->
 
       <!-- Logged In -->
 
-      <!-- <div class="dropdown">
+      <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn dropdown-toggle userName"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          aria-haspopup="true"
+          (click)="toggleIconVisibility()"
         >
-          Dropdown
+          <span class="userInitials rounded-circle">UN</span>
+          User Name
+          <span class="icon ps-1" (click)="toggleIconVisibility()">
+            <i
+              class="fa pe-3"
+              [ngClass]="
+                iconChange ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'
+              "
+            ></i>
+          </span>
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <ul class="dropdown-menu rounded">
+          <li class="border-bottom">
+            <a class="dropdown-item" href="#">My Account</a>
+          </li>
+          <li class="border-bottom">
+            <a class="dropdown-item" href="#">Payment History</a>
+          </li>
+          <li class="border-bottom">
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li class="border-bottom">
+            <a class="dropdown-item" href="#">Change Password</a>
+          </li>
+          <li>
+            <a class="dropdown-item" [routerLink]="['login']">Logout</a>
+          </li>
         </ul>
-      </div> -->
+      </div>
 
       <!-- <div class="dropdown">
         <button class="dropbtn">
@@ -52,3 +75,5 @@
     </div>
   </div>
 </nav>
+
+<router-outlet></router-outlet>

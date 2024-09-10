@@ -1,0 +1,189 @@
+.body-medium {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.body-regular {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.p-semi-bold {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+header {
+  background-image: url("../../../../public/Rectangle.png");
+  background-color: #f3e9eb;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 800px;
+  top: 91px;
+  gap: 0px;
+  opacity: 0px;
+  padding: 96px 96px;
+
+  .header-section-1 {
+    width: 634px;
+    height: 422px;
+  }
+  .header-section-2 {
+    width: 481px;
+    @if (loggedin) {
+      height: 466px;
+    } @else {
+      height: 360px;
+    }
+    top: 311px;
+    left: 863px;
+    padding: 32px;
+    gap: 32px;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  .balance {
+    width: 417px;
+    height: 90px;
+    padding: 8px 16px 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: #f3e9eb;
+    .balance-text {
+      width: 385px;
+      height: 24px;
+      color: #521220;
+    }
+    .balance-amount {
+      width: 145px;
+      height: 42px;
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 42px;
+      color: #871e35;
+    }
+  }
+  .send-amount {
+    width: 417px;
+    height: 24px;
+  }
+  .amount {
+    width: 417px;
+    height: 56px;
+    border-radius: 8px;
+    color: #24221e;
+    border-color: #e3e2e2 !important;
+  }
+  .delivery-time {
+    color: #898886;
+  }
+  p {
+    text-align: left;
+    color: #ffffff;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 96px;
+    color: #ffffff;
+  }
+  small {
+    color: #ffffff;
+  }
+  .button-section {
+    display: flex;
+    align-items: end;
+    height: 120px;
+  }
+  .create-account-button {
+    width: 192px;
+    height: 56px;
+    padding: 16px 32px 16px 32px;
+    border-radius: 6.5px;
+    background-color: #871e35;
+    border: 1px #871e35;
+  }
+  button {
+    p {
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  .continue-button {
+    width: 417px;
+    height: 56px;
+    padding: 16px 32px 16px 32px;
+    border-radius: 6.5px;
+    background-color: #871e35;
+    border: 1px #871e35;
+  }
+}
+section {
+  background-color: #fbfbfb;
+  height: 634.9px;
+  padding: 64px 60px 64px 60px;
+  .getting-started {
+    width: 920px;
+    height: 506.89px;
+    gap: 40px;
+  }
+  .getting-started-header {
+    width: 585px;
+    height: 166px;
+    gap: 16px;
+  }
+  .getting-started-header-title {
+    width: 243.25px;
+    height: 30px;
+    color: #871e35;
+    text-align: center;
+  }
+  .getting-started-header-text {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+    color: #24221e;
+  }
+  .getting-started-body {
+    width: 920px;
+    height: 300.89px;
+    gap: 16px;
+  }
+  .getting-started-body-child {
+    width: 296px;
+    height: 300.89px;
+    padding: 16px 0px 0px 0px;
+    gap: 32px;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  .getting-started-body-child-img {
+    width: 120px;
+    height: 120px;
+    background-color: #f3e9eb;
+    border-radius: 100%;
+  }
+
+  img {
+    width: 62.88px;
+    height: 62.88px;
+  }
+  .getting-started-body-child-heading {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    color: #871e35;
+  }
+  .getting-started-body-child-text {
+    width: 264px;
+    height: 72px;
+  }
+}

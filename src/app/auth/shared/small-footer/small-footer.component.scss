@@ -1,0 +1,11 @@
+@import "../../../shared/variables";
+
+footer {
+  background-color: #f3e9eb;
+}
+
+p {
+  padding: 16px 8px;
+  color: map-get($map: $theme-colors, $key: "black");
+  font-weight: 500;
+}

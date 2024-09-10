@@ -1,0 +1,102 @@
+@import "../../shared/variables";
+
+.content-login {
+  margin-top: 134px;
+  min-height: 100vh;
+}
+
+.content-login--header {
+  gap: 16px;
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  p,
+  a {
+    color: #565552;
+    font-weight: 400;
+  }
+}
+
+.card-login {
+  margin-top: 32px;
+  width: 565px;
+  gap: 16px;
+  padding: 64px 32px;
+}
+
+.card-login--header {
+  gap: 8px;
+  h2 {
+    font-weight: 600;
+  }
+  p {
+    color: #565552;
+    font-weight: 400;
+  }
+}
+
+.createAcc {
+  color: #565552;
+  font-weight: 400;
+  a {
+    color: map-get($map: $theme-colors, $key: "purple");
+    font-weight: 500;
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+label {
+  color: #3c3a37;
+}
+
+input {
+  color: #898886;
+}
+
+.buttonClass {
+  padding: 16px 32px;
+  color: white;
+  background-color: map-get($theme-colors, "purple");
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  input {
+    padding-right: 30px;
+  }
+  .icon {
+    position: absolute;
+    right: 10px; /* Adjust based on your design */
+    cursor: pointer;
+    color: #898886;
+  }
+}
+
+.toastClass {
+  width: 600px;
+  ngb-toast {
+    padding-top: 20px;
+    background-color: #e3e2e2;
+    width: 100%;
+    margin-bottom: 50px;
+    p {
+      color: #565552;
+      font-weight: 600;
+      font-size: 20px;
+      i {
+        font-size: 45px;
+        color: map-get($map: $theme-colors, $key: "black");
+      }
+      button {
+        color: map-get($map: $theme-colors, $key: "black");
+      }
+    }
+  }
+}
