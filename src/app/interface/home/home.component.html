@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <header class="d-flex justify-content-between align-items-center">
   <div
     class="header-section-1 d-flex flex-column justify-content-center align-content-center"
@@ -21,19 +22,34 @@
       <small class="balance-amount">10000EGP</small>
     </div>
     }
-    <small class="send-amount body-medium" style="color: #24221e"
-      >Send Amount</small
-    >
-    <small class="d-flex align-items-center border border-1 body-regular amount"
-      >1000</small
-    >
-    <div style="color: #3c3a37">
-      <span class="delivery-time body-regular">Delivery Time:</span>
-      <span class="body-medium" style="color: #3c3a37">By May 20th</span>
-    </div>
-    <button type="button" class="btn continue-button">
-      <small class="body-medium">Continue</small>
-    </button>
+    <form #amountForm="ngForm" (ngSubmit)="onSubmit(amountForm)">
+      <label for="amount" class="send-amount body-medium" style="color: #24221e"
+        >Send Amount</label
+      >
+      <input
+        name="amount"
+        id="amount"
+        type="number"
+        required
+        placeholder="1000"
+        [(ngModel)]="form.amount"
+      />
+      <br />
+      <br />
+      <div style="color: #3c3a37">
+        <span class="delivery-time body-regular">Delivery Time:</span>
+        <span class="body-medium" style="color: #3c3a37">By May 20th</span>
+      </div>
+      <br />
+      <button
+        type="submit"
+        class="btn continue-button"
+        (click)="routeToMoneyTransfer()"
+      >
+        <small class="body-medium">Continue</small>
+      </button>
+    </form>
+
     <div class="body-medium" style="color: #898886">
       By Clicking Continue, I’m agree with
       <b style="color: #871e35; opacity: 100%">Terms & Policy</b>
@@ -110,3 +126,4 @@
   </div>
 </section>
 <app-mobile-app></app-mobile-app>
+<app-footer></app-footer>

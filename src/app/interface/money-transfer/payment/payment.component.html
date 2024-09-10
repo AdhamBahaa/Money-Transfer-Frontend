@@ -1,1 +1,101 @@
-<p>payment works!</p>
+<app-navbar></app-navbar>
+<header class="d-flex justify-content-between">
+  <div class="d-flex flex-column justify-content-center align-content-center">
+    <h1>Money Transfer</h1>
+    <ul class="d-flex">
+      <li class="list-unstyled home body-medium">Home</li>
+      <li class="about-us body-medium">About Us</li>
+      <li class="payment body-medium">Payment</li>
+    </ul>
+  </div>
+  <div>
+    <img src="currency.png" alt="currency photo" />
+  </div>
+</header>
+<div
+  class="middle-section d-flex flex-column justify-content-center align-items-center"
+>
+  <div
+    class="progress-steps d-flex flex-column justify-content-center align-items-center"
+  >
+    <div
+      class="progress-steps-imgs d-flex justify-content-center align-items-center"
+    >
+      <img src="/Step1.svg" alt="step1" class="step" />
+      <img src="/LineRed.svg" alt="line" class="line" />
+      <img src="/Step2Red.svg" alt="step2" class="step" />
+      <img src="/LineRed.svg" alt="line" class="line" />
+      <img src="/Step3Red.svg" alt="step3" class="step" />
+    </div>
+    <div class="progress-steps-text d-flex">
+      <p class="amount body-medium">Amount</p>
+      <p class="confirmation body-medium">confirmation</p>
+      <p class="payement body-regular">Payement</p>
+    </div>
+  </div>
+  <br />
+  <div
+    class="middle-section-content d-flex flex-column justify-content-center align-items-center"
+  >
+    <img class="success-img" src="success.svg" alt="success" />
+    <br />
+    <p class="success-text">Your transfer was successful</p>
+    <p class="success-amount">
+      {{ amount }} <span style="color: #871e35">EGP</span>
+    </p>
+    <div
+      class="d-flex flex-column align-items-center"
+      style="width: 560.75px; height: 340px"
+    >
+      <div class="info d-flex align-items-center">
+        <div class="bank-icon d-flex justify-content-center align-items-center">
+          <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+        </div>
+        <div class="info-content d-flex flex-column">
+          <p class="body-medium" style="color: #871e35">From</p>
+          <p class="p-semi-bold" style="color: #3c3a37">{{ senderName }}</p>
+          <p class="body-regular" style="color: #898886">{{ senderAccount }}</p>
+        </div>
+      </div>
+      <br />
+      <div class="arrow-icon d-flex justify-content-center align-items-center">
+        <img
+          class="arrow-icon-img"
+          src="doubleArrowIcon.svg"
+          alt="arrow-icon"
+        />
+      </div>
+      <br />
+      <div class="info d-flex align-items-center">
+        <div class="bank-icon d-flex justify-content-center align-items-center">
+          <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+        </div>
+        <div class="info-content d-flex flex-column">
+          <p class="body-medium" style="color: #871e35">To</p>
+          <p class="p-semi-bold" style="color: #3c3a37">{{ recipientName }}</p>
+          <p class="body-regular" style="color: #898886">
+            {{ recipientAccount }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div
+      class="total-amount body-regular d-flex align-items-center justify-content-between border-bottom"
+      style="color: #565552"
+    >
+      <p>Transfer amount</p>
+      <p>{{ amount }} EGP</p>
+    </div>
+    <br />
+    <button class="confirm-btn" (click)="routeToHome()">
+      <span class="body-medium">Back to Home</span>
+    </button>
+    <br />
+    <button class="back-btn" (click)="addToFavourites()">
+      <span class="body-medium">Add To Favourite</span>
+    </button>
+  </div>
+</div>
+<app-mobile-app></app-mobile-app>
+<app-footer></app-footer>

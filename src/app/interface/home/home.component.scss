@@ -53,12 +53,12 @@ header {
     width: 417px;
     height: 24px;
   }
-  .amount {
+  input {
     width: 417px;
     height: 56px;
     border-radius: 8px;
-    color: #24221e;
-    border-color: #e3e2e2 !important;
+    border-width: 1px;
+    border-color: #e3e2e2;
   }
   .delivery-time {
     color: #898886;

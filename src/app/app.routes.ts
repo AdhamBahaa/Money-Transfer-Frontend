@@ -1,12 +1,17 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./interface/home/home.component').then((m) => m.HomeComponent),
+  },
   {
     path: 'login',
     loadComponent: () =>
       import('./auth/login/login.component').then((m) => m.LoginComponent),
   },
-
   // routing in page My Account
   {
     path: 'my-account',
@@ -47,5 +52,47 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'profile',
     pathMatch: 'full',
+  },
+  {
+    path: 'money-transfer',
+    loadComponent: () =>
+      import('./interface/money-transfer/amount/amount.component').then(
+        (m) => m.AmountComponent
+      ),
+  },
+  {
+    path: 'money-transfer/amount',
+    loadComponent: () =>
+      import('./interface/money-transfer/amount/amount.component').then(
+        (m) => m.AmountComponent
+      ),
+  },
+  {
+    path: 'money-transfer/confirmation',
+    loadComponent: () =>
+      import(
+        './interface/money-transfer/confirmation/confirmation.component'
+      ).then((m) => m.ConfirmationComponent),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'money-transfer/payment',
+    loadComponent: () =>
+      import('./interface/money-transfer/payment/payment.component').then(
+        (m) => m.PaymentComponent
+      ),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'help',
+    loadComponent: () =>
+      import('./interface/help/help.component').then((m) => m.HelpComponent),
+  },
+  {
+    path: 'not-found',
+    loadComponent: () =>
+      import('./interface/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
   },
 ];

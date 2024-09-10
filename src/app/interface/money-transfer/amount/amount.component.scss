@@ -1,0 +1,150 @@
+header {
+  background-image: url("/public/background1.png");
+  background-color: #f3e9eb;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 96px 96px;
+  height: 404px;
+  background-color: #f3e9eb;
+  h1 {
+    width: 1061.65px;
+    height: 60px;
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    color: #24221e;
+  }
+  ul {
+    width: 411.03px;
+    line-height: 24px;
+    gap: 5px;
+    .home {
+      width: 54px;
+      height: 24px;
+      color: #3c3a37;
+      padding-right: 30px;
+    }
+    .about-us {
+      width: 77px;
+      height: 24px;
+      color: #3c3a37;
+    }
+    .amount {
+      width: 77px;
+      height: 24px;
+      color: #871e35;
+    }
+  }
+}
+.middle-section {
+  height: 933.77px;
+  background-color: #ffffff;
+  .progress-steps {
+    width: 300.25px;
+    height: 108.08px;
+    top: 583px;
+    left: 570px;
+    gap: 20px;
+    color: #24221e;
+    .progress-steps-imgs {
+      width: 283px;
+      height: 48px;
+      top: 583px;
+      left: 576.75px;
+      gap: 8px;
+      .step {
+        width: 48px;
+        height: 48px;
+        gap: 10px;
+      }
+      .line {
+        width: 54px;
+        height: 32px;
+      }
+    }
+    .progress-steps-text {
+      gap: 28px;
+    }
+    .amount {
+      width: 61px;
+      height: 24px;
+      top: 667.08px;
+      left: 570px;
+      color: #24221e;
+    }
+    .confirmation {
+      width: 98px;
+      height: 24px;
+      top: 667.08px;
+      left: 669.5px;
+      color: #3c3a37;
+    }
+    .payement {
+      width: 67px;
+      height: 24px;
+      top: 667.08px;
+      left: 803.25px;
+      color: #3c3a37;
+    }
+  }
+  .middle-section-content {
+    width: 589.64px;
+    height: 546px;
+    .middle-section-title {
+      width: 589.64px;
+      height: 60px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-family: Inter;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 60px;
+      text-align: center;
+      color: #24221e;
+    }
+    .middle-section-body {
+      width: 554px;
+      height: 38px;
+      gap: 16px;
+      label {
+        color: #24221e;
+      }
+      input {
+        width: 554px;
+        height: 56px;
+        border-radius: 8px;
+        border-width: 1px;
+        border-color: #b0afae;
+      }
+      button {
+        width: 554px;
+        height: 56px;
+        padding: 16px 32px;
+        border-radius: 6.5px;
+        border-width: 1px;
+        border-color: #871e35;
+        background-color: #871e35;
+        color: #ffffff;
+      }
+      .favorites {
+        width: 144px;
+        height: 30px;
+        gap: 8px;
+        color: #871e35;
+        .fav-icon {
+          width: 24px;
+          height: 24px;
+        }
+        .arrow-icon {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .error {
+        color: rgb(247, 8, 8);
+        font-size: 12px;
+      }
+    }
+  }
+}

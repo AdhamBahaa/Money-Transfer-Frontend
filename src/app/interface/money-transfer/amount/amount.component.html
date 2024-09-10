@@ -1,1 +1,107 @@
-<p>amount works!</p>
+<app-navbar></app-navbar>
+<header class="d-flex justify-content-between">
+  <div class="d-flex flex-column justify-content-center align-content-center">
+    <h1>Money Transfer</h1>
+    <ul class="d-flex">
+      <li class="list-unstyled home body-medium">Home</li>
+      <li class="about-us body-medium">About Us</li>
+      <li class="amount body-medium">Amount</li>
+    </ul>
+  </div>
+  <div>
+    <img src="currency.png" alt="currency photo" />
+  </div>
+</header>
+<div
+  class="middle-section d-flex flex-column justify-content-center align-items-center"
+>
+  <div
+    class="progress-steps d-flex flex-column justify-content-center align-items-center"
+  >
+    <div
+      class="progress-steps-imgs d-flex justify-content-center align-items-center"
+    >
+      <img src="/Step1.svg" alt="step1" class="step" />
+      <img src="/LineRed.svg" alt="line" class="line" />
+      <img src="/Step2Grey.svg" alt="step2" class="step" />
+      <img src="/LineGrey.svg" alt="line" class="line" />
+      <img src="/Step3Grey.svg" alt="step3" class="step" />
+    </div>
+    <div class="progress-steps-text d-flex">
+      <p class="amount body-medium">Amount</p>
+      <p class="confirmation body-regular">confirmation</p>
+      <p class="payement body-regular">Payement</p>
+    </div>
+  </div>
+  <div class="middle-section-content">
+    <div class="middle-section-title">How much are you sending?</div>
+    <div class="middle-section-body">
+      <form #amountForm="ngForm" (ngSubmit)="onSubmit(amountForm)">
+        <div class="amount">
+          <label for="amount" class="body-regular">Amount</label>
+          <input
+            name="amount"
+            id="amount"
+            type="number"
+            required
+            placeholder="1000"
+            [(ngModel)]="form.amount"
+          />
+        </div>
+        <br />
+        <div class="p-regular d-flex justify-content-between">
+          <p style="color: #3c3a37">Recipient Information</p>
+          <div class="favorites d-flex">
+            <img
+              src="favoritesIcon.svg"
+              alt="star"
+              class="fav-icon align-self-center"
+            />
+            <p>Favourite</p>
+            <img
+              src="arrowIcon.svg"
+              alt="arrow"
+              class="arrow-icon align-self-center"
+            />
+          </div>
+        </div>
+        <div class="recipient-name">
+          <label for="recipient-name" class="body-regular"
+            >Recipient Name</label
+          >
+          <input
+            name="recipient-name"
+            id="recipient-name"
+            type="text"
+            required
+            [(ngModel)]="form.recipientName"
+            #recipientNameInput="ngModel"
+          />
+        </div>
+        @if(recipientNameInput.invalid && recipientNameInput.dirty){
+        <small class="error">This Field Is Required</small>
+        }
+        <br />
+
+        <div class="recipient-account">
+          <label for="recipient-account" class="body-regular"
+            >Recipient Account</label
+          >
+          <input
+            name="recipient-account"
+            id="recipient-account"
+            type="number"
+            required
+            [(ngModel)]="form.recipientAccount"
+          />
+        </div>
+        <br />
+        <button type="submit" (click)="routeToConfirmation()">
+          <span class="body-medium">Continue</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<app-mobile-app></app-mobile-app>
+<app-footer></app-footer>
