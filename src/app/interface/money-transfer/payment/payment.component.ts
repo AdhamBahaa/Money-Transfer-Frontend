@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -8,11 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './payment.component.scss',
 })
 export class PaymentComponent {
+  constructor(private readonly _Router: Router) {}
+
   senderName: string = 'Jonathon Smith';
   senderAccount: string = 'Account xxxx7890';
   recipientName: string = 'Asmaa Dosuky ';
   recipientAccount: string = 'Account xxxx7890';
   amount: number = 1000;
-  backToHome() {}
+  routeToHome() {
+    this._Router.navigate(['home']);
+  }
   addToFavourites() {}
 }

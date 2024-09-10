@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmation',
@@ -8,11 +9,17 @@ import { Component } from '@angular/core';
   styleUrl: './confirmation.component.scss',
 })
 export class ConfirmationComponent {
+  constructor(private readonly _Router: Router) {}
+
   senderName: string = 'Jonathon Smith';
   senderAccount: string = 'Account xxxx7890';
   recipientName: string = 'Asmaa Dosuky ';
   recipientAccount: string = 'Account xxxx7890';
   amount: number = 1000;
-  onConfirm() {}
-  onBack() {}
+  routeToPayment() {
+    this._Router.navigate(['money-transfer/payment']);
+  }
+  routeToAmount() {
+    this._Router.navigate(['money-transfer/amount']);
+  }
 }
