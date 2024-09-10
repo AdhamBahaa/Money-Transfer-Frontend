@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MobileAppComponent } from '../../../shared/mobile-app/mobile-app.component';
+import { FooterComponent } from '../../../shared/footer/footer.component';
+import { NavbarComponent } from '../../../shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-payment',
   standalone: true,
-  imports: [],
+  imports: [MobileAppComponent, FooterComponent, NavbarComponent],
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.scss',
 })

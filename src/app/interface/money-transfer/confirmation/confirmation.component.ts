@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../../shared/navbar/navbar.component';
+import { MobileAppComponent } from '../../../shared/mobile-app/mobile-app.component';
+import { FooterComponent } from '../../../shared/footer/footer.component';
 
 @Component({
   selector: 'app-confirmation',
   standalone: true,
-  imports: [],
+  imports: [NavbarComponent, MobileAppComponent, FooterComponent],
   templateUrl: './confirmation.component.html',
   styleUrl: './confirmation.component.scss',
 })
