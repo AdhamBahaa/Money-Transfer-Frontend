@@ -4,8 +4,17 @@ import { AmountComponent } from './interface/money-transfer/amount/amount.compon
 import { ConfirmationComponent } from './interface/money-transfer/confirmation/confirmation.component';
 import { PaymentComponent } from './interface/money-transfer/payment/payment.component';
 import { HomeComponent } from './interface/home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HelpComponent } from './interface/help/help.component';
+import { NotFoundComponent } from './interface/not-found/not-found.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./interface/home/home.component').then((m) => m.HomeComponent),
+  },
   {
     path: 'login',
     loadComponent: () =>
@@ -13,22 +22,51 @@ export const routes: Routes = [
   },
   {
     path: 'money-transfer',
-    component: AmountComponent,
+    loadComponent: () =>
+      import('./interface/money-transfer/amount/amount.component').then(
+        (m) => m.AmountComponent
+      ),
   },
   {
     path: 'money-transfer/amount',
-    component: AmountComponent,
+    loadComponent: () =>
+      import('./interface/money-transfer/amount/amount.component').then(
+        (m) => m.AmountComponent
+      ),
   },
   {
     path: 'money-transfer/confirmation',
-    component: ConfirmationComponent,
+    loadComponent: () =>
+      import(
+        './interface/money-transfer/confirmation/confirmation.component'
+      ).then((m) => m.ConfirmationComponent),
+    canActivate: [authGuard],
   },
   {
     path: 'money-transfer/payment',
-    component: PaymentComponent,
+    loadComponent: () =>
+      import('./interface/money-transfer/payment/payment.component').then(
+        (m) => m.PaymentComponent
+      ),
+    canActivate: [authGuard],
+  },
+
+  {
+    path: 'my-account',
+    loadComponent: () =>
+      import('./profile/profile.component').then((m) => m.ProfileComponent),
+    canActivate: [authGuard],
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'help',
+    loadComponent: () =>
+      import('./interface/help/help.component').then((m) => m.HelpComponent),
+  },
+  {
+    path: 'not-found',
+    loadComponent: () =>
+      import('./interface/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
   },
 ];
