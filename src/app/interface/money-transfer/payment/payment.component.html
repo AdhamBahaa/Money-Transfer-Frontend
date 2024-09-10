@@ -11,7 +11,9 @@
     <img src="currency.png" alt="currency photo" />
   </div>
 </header>
-<div class="d-flex flex-column justify-content-center align-items-center">
+<div
+  class="middle-section d-flex flex-column justify-content-center align-items-center"
+>
   <div
     class="progress-steps d-flex flex-column justify-content-center align-items-center"
   >
@@ -30,4 +32,93 @@
       <p class="payement body-regular">Payement</p>
     </div>
   </div>
+  <br />
+  <div
+    class="middle-section-content d-flex flex-column justify-content-center align-items-center"
+  >
+    <img class="success-img" src="success.svg" alt="success" />
+    <br />
+    <p class="success-text">Your transfer was successful</p>
+    <p class="success-amount">
+      {{ amount }} <span style="color: #871e35">EGP</span>
+    </p>
+    <div
+      class="d-flex flex-column align-items-center"
+      style="width: 560.75px; height: 340px"
+    >
+      <div class="info d-flex align-items-center">
+        <div class="bank-icon d-flex justify-content-center align-items-center">
+          <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+        </div>
+        <div class="info-content d-flex flex-column">
+          <p class="body-medium" style="color: #871e35">From</p>
+          <p class="p-semi-bold" style="color: #3c3a37">{{ senderName }}</p>
+          <p class="body-regular" style="color: #898886">{{ senderAccount }}</p>
+        </div>
+      </div>
+      <br />
+      <div class="arrow-icon d-flex justify-content-center align-items-center">
+        <img
+          class="arrow-icon-img"
+          src="doubleArrowIcon.svg"
+          alt="arrow-icon"
+        />
+      </div>
+      <br />
+      <div class="info d-flex align-items-center">
+        <div class="bank-icon d-flex justify-content-center align-items-center">
+          <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+        </div>
+        <div class="info-content d-flex flex-column">
+          <p class="body-medium" style="color: #871e35">To</p>
+          <p class="p-semi-bold" style="color: #3c3a37">{{ recipientName }}</p>
+          <p class="body-regular" style="color: #898886">
+            {{ recipientAccount }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div
+      class="total-amount body-regular d-flex align-items-center justify-content-between border-bottom"
+      style="color: #565552"
+    >
+      <p>Transfer amount</p>
+      <p>{{ amount }} EGP</p>
+    </div>
+    <br />
+    <button class="confirm-btn" (click)="backToHome()">
+      <span class="body-medium">Back to Home</span>
+    </button>
+    <br />
+    <button class="back-btn" (click)="addToFavourites()">
+      <span class="body-medium">Add To Favourite</span>
+    </button>
+  </div>
 </div>
+
+<!-- 
+<div class="container">
+  <img src="/success.png" alt="Check image" />
+  <h2>Your transfer was successful!</h2>
+  <p>1000EGP</p>
+  <div class="card">
+    <div class="card-body">
+      <h5>From</h5>
+      <p>senderName</p>
+      <p>senderAccount</p>
+    </div>
+  </div>
+  <img class="my-2" src="/backAndForthArrow.png" alt="backAndForthArrow" />
+  <div class="card">
+    <div class="card-body">
+      <h5>To</h5>
+      <p>recipientName</p>
+      <p>recipientAccount</p>
+    </div>
+  </div>
+  <P>Transfer amount: </P>
+  <p>Amount</p>
+  <button class="btn">Back To Home</button>
+  <button class="btn btn-outline-secondary">Favorites</button>
+</div> -->

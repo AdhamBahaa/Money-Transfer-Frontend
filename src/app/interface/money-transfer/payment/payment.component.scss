@@ -37,51 +37,128 @@ header {
     }
   }
 }
-.progress-steps {
-  width: 300.25px;
-  height: 108.08px;
-  top: 583px;
-  left: 570px;
-  gap: 20px;
-  color: #24221e;
-  .progress-steps-imgs {
-    width: 283px;
-    height: 48px;
+.middle-section {
+  height: 1200px;
+  background-color: #ffffff;
+  .progress-steps {
+    width: 300.25px;
+    height: 108.08px;
     top: 583px;
-    left: 576.75px;
-    gap: 8px;
-    .step {
+    left: 570px;
+    gap: 20px;
+    color: #24221e;
+    .progress-steps-imgs {
+      width: 283px;
+      height: 48px;
+      top: 583px;
+      left: 576.75px;
+      gap: 8px;
+      .step {
+        width: 48px;
+        height: 48px;
+        gap: 10px;
+      }
+      .line {
+        width: 54px;
+        height: 32px;
+      }
+    }
+    .progress-steps-text {
+      gap: 28px;
+    }
+    .amount {
+      width: 61px;
+      height: 24px;
+      top: 667.08px;
+      left: 570px;
+      color: #24221e;
+    }
+    .confirmation {
+      width: 98px;
+      height: 24px;
+      top: 667.08px;
+      left: 669.5px;
+      color: #24221e;
+    }
+    .payement {
+      width: 67px;
+      height: 24px;
+      top: 667.08px;
+      left: 803.25px;
+      color: #3c3a37;
+    }
+  }
+  .middle-section-content {
+    width: 589.64px;
+    height: 906.08px;
+    .success-img {
+      width: 112.08px;
+      height: 112.08px;
+    }
+    .success-text {
+      font-family: Inter;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 48px;
+      color: #24221e;
+    }
+    .success-amount {
+      font-family: Inter;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 78px;
+      color: #24221e;
+    }
+    .total-amount {
+      width: 560.75px;
+      height: 56px;
+    }
+    .bank-icon {
       width: 48px;
       height: 48px;
-      gap: 10px;
+      background-color: #e3e2e2;
+      border-radius: 50%;
+      .bank-icon-img {
+        width: 32px;
+        height: 32px;
+      }
     }
-    .line {
-      width: 54px;
-      height: 32px;
+    .info {
+      width: 560.75px;
+      height: 142px;
+      padding: 16px;
+      gap: 32px;
+      border-radius: 8px;
+      background-color: #f6f6f6;
+      .info-content {
+        width: 377.64px;
+        height: 110px;
+      }
     }
-  }
-  .progress-steps-text {
-    gap: 28px;
-  }
-  .amount {
-    width: 61px;
-    height: 24px;
-    top: 667.08px;
-    left: 570px;
-    color: #24221e;
-  }
-  .confirmation {
-    width: 98px;
-    height: 24px;
-    top: 667.08px;
-    left: 669.5px;
-    color: #24221e;
-  }
-  .payement {
-    width: 67px;
-    height: 24px;
-    top: 667.08px;
-    left: 803.25px;
-    color: #3c3a37;
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+      .arrow-icon-img {
+        width: 19.07px;
+        height: 19.07px;
+      }
+    }
+    button {
+      width: 560.75px;
+      height: 56px;
+      padding: 16px 32px;
+      border-radius: 6.5px;
+      border-width: 1px;
+    }
+    .confirm-btn {
+      background-color: #871e35;
+      border-color: #871e35;
+      color: #ffffff;
+    }
+    .back-btn {
+      background-color: #ffffff;
+      border-color: #24221e;
+      color: #24221e;
+    }
   }
 }
