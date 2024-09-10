@@ -13,6 +13,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { passwordValidator } from '../shared/utility-functions';
 import { AuthService } from '../../services/auth/auth.service';
 import { ILogin } from '../../models/auth.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ import { ILogin } from '../../models/auth.model';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
   ],
   providers: [AuthService],
   templateUrl: './login.component.html',

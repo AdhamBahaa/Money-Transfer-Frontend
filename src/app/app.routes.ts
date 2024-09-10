@@ -6,6 +6,21 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./auth/login/login.component').then((m) => m.LoginComponent),
   },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./auth/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
+  {
+    path: 'welcome-back',
+    loadComponent: () =>
+      import('./auth/welcome-back/welcome-back.component').then(
+        (m) => m.WelcomeBackComponent
+      ),
+  },
 
   // routing in page My Account
   {
@@ -42,10 +57,5 @@ export const routes: Routes = [
       import(
         './interface/my-account/change-password/change-password.component'
       ).then((m) => m.ChangePasswordComponent),
-  },
-  {
-    path: '',
-    redirectTo: 'profile',
-    pathMatch: 'full',
   },
 ];

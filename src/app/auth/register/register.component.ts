@@ -16,6 +16,7 @@ import {
 } from '../shared/utility-functions';
 import { ICreateNewAuth } from '../../models/auth.model';
 import { AuthService } from '../../services/auth/auth.service';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -27,6 +28,8 @@ import { AuthService } from '../../services/auth/auth.service';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
+    RouterOutlet,
   ],
   providers: [AuthService],
   templateUrl: './register.component.html',
@@ -43,7 +46,7 @@ export class RegisterComponent {
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       country: new FormControl('Choose your country', [Validators.required]),
-      day: new FormControl('', [
+      day: new FormControl('DD', [
         Validators.maxLength(2),
         Validators.min(1),
         Validators.max(31),
