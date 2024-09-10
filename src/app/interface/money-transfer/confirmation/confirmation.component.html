@@ -11,7 +11,9 @@
     <img src="currency.png" alt="currency photo" />
   </div>
 </header>
-<div class="d-flex flex-column justify-content-center align-items-center">
+<div
+  class="middle-section d-flex flex-column justify-content-center align-items-center"
+>
   <div
     class="progress-steps d-flex flex-column justify-content-center align-items-center"
   >
@@ -29,5 +31,60 @@
       <p class="confirmation body-medium">confirmation</p>
       <p class="payement body-regular">Payement</p>
     </div>
+  </div>
+  <br />
+  <div class="middle-section-content d-flex flex-column justify-content-center">
+    <div
+      class="total-amount body-regular d-flex align-items-center justify-content-between border-bottom"
+      style="color: #565552"
+    >
+      <p>Total amount</p>
+      <p>{{ amount }} EGP</p>
+    </div>
+    <br />
+    <div
+      class="d-flex flex-column align-items-center"
+      style="width: 560.75px; height: 340px"
+    >
+      <div class="info d-flex align-items-center">
+        <div class="bank-icon d-flex justify-content-center align-items-center">
+          <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+        </div>
+        <div class="info-content d-flex flex-column">
+          <p class="body-medium" style="color: #871e35">From</p>
+          <p class="p-semi-bold" style="color: #3c3a37">{{ senderName }}</p>
+          <p class="body-regular" style="color: #898886">{{ senderAccount }}</p>
+        </div>
+      </div>
+      <br />
+      <div class="arrow-icon d-flex justify-content-center align-items-center">
+        <img
+          class="arrow-icon-img"
+          src="doubleArrowIcon.svg"
+          alt="arrow-icon"
+        />
+      </div>
+      <br />
+      <div class="info d-flex align-items-center">
+        <div class="bank-icon d-flex justify-content-center align-items-center">
+          <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+        </div>
+        <div class="info-content d-flex flex-column">
+          <p class="body-medium" style="color: #871e35">To</p>
+          <p class="p-semi-bold" style="color: #3c3a37">{{ recipientName }}</p>
+          <p class="body-regular" style="color: #898886">
+            {{ recipientAccount }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <button class="confirm-btn" (click)="onConfirm()">
+      <span class="body-medium">Confirm</span>
+    </button>
+    <br />
+    <button class="back-btn" (click)="onBack()">
+      <span class="body-medium">Back</span>
+    </button>
   </div>
 </div>
