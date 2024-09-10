@@ -5,7 +5,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { HelpComponent } from './help/help.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-
+import { MoneyTransferComponent } from './money-transfer/money-transfer.component';
 @Component({
   selector: 'app-interface',
   standalone: true,
@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
     HelpComponent,
     NotFoundComponent,
     HomeComponent,
+    MoneyTransferComponent,
   ],
   templateUrl: './interface.component.html',
   styleUrl: './interface.component.scss',
