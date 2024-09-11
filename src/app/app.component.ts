@@ -4,6 +4,7 @@ import { InterfaceComponent } from './interface/interface.component';
 import { LoginComponent } from './auth/login/login.component';
 import { WelcomeBackComponent } from './auth/welcome-back/welcome-back.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { MyAccountComponent } from "./interface/my-account/my-account.component";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ import { RegisterComponent } from './auth/register/register.component';
     LoginComponent,
     WelcomeBackComponent,
     RegisterComponent,
-  ],
+    MyAccountComponent
+],
+  
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

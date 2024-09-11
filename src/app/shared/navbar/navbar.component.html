@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-center align-items-center">
       <ul class="d-flex pt-3 list-unstyled pageList">
         <a routerLink="/home"><li class="px-3">Home</li></a>
-        <a><li class="px-3">Money Transfer</li></a>
+        <a routerLink="/money-transfer"><li class="px-3">Money Transfer</li></a>
         <a routerLink="/my-account"><li class="px-3">My Account</li></a>
         <a routerLink="/help"><li class="px-3">Help</li></a>
       </ul>
@@ -17,10 +17,20 @@
       @if(!this.loggedIn){
 
       <div class="ps-3 d-flex">
-        <button type="button" class="btn btn-outline-dark buttonClass">
+        <button
+          type="button"
+          class="btn btn-outline-dark buttonClass"
+          (click)="this.router.navigate(['login'])"
+        >
           Login
         </button>
-        <button type="button" class="btn ms-3 buttonReg">Register Now</button>
+        <button
+          type="button"
+          class="btn ms-3 buttonReg"
+          (click)="this.router.navigate(['register'])"
+        >
+          Register Now
+        </button>
       </div>
       } @else{
 
@@ -34,7 +44,7 @@
           (click)="toggleIconVisibility()"
         >
           <span class="userInitials rounded-circle">UN</span>
-          User Name
+          {{ userInfo?.name }}
           <span class="icon ps-1" (click)="toggleIconVisibility()">
             <i
               class="fa pe-3"
@@ -46,19 +56,25 @@
         </button>
         <ul class="dropdown-menu rounded">
           <li class="border-bottom">
-            <a class="dropdown-item" href="#">My Account</a>
+            <a class="dropdown-item" routerLink="/my-account">My Account</a>
           </li>
           <li class="border-bottom">
-            <a class="dropdown-item" href="#">Payment History</a>
+            <a class="dropdown-item" routerLink="/my-account/payments-history"
+              >Payment History</a
+            >
           </li>
           <li class="border-bottom">
-            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" routerLink="/my-account/settings"
+              >Settings</a
+            >
           </li>
           <li class="border-bottom">
-            <a class="dropdown-item" href="#">Change Password</a>
+            <a class="dropdown-item" routerLink="/my-account/change-password"
+              >Change Password</a
+            >
           </li>
           <li>
-            <a class="dropdown-item" routerLink="/login">Logout</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
           </li>
         </ul>
       </div>

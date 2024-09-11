@@ -1,17 +1,11 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
+import { MyProfileComponent } from './interface/my-account/my-profile/my-profile.component';
+import { SettingsComponent } from './interface/my-account/settings/settings.component';
+import { PaymentsHistoryComponent } from './interface/my-account/payments-history/payments-history.component';
+import { ChangePasswordComponent } from './interface/my-account/change-password/change-password.component';
 
 export const routes: Routes = [
-  {
-
-    path: 'home',
-    loadComponent: () =>
-      import('./interface/interface.component').then(
-        (m) => m.InterfaceComponent
-      ),
-  },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-
   {
     path: 'login',
     loadComponent: () =>
@@ -33,6 +27,13 @@ export const routes: Routes = [
       ),
   },
 
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./interface/home/home.component').then((m) => m.HomeComponent),
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   // routing in page My Account
   {
     path: 'my-account',
@@ -40,34 +41,13 @@ export const routes: Routes = [
       import('./interface/my-account/my-account.component').then(
         (m) => m.MyAccountComponent
       ),
-  },
-  {
-    path: 'profile',
-    loadComponent: () =>
-      import('./interface/my-account/my-profile/my-profile.component').then(
-        (m) => m.MyProfileComponent
-      ),
-  },
-  {
-    path: 'settings',
-    loadComponent: () =>
-      import('./interface/my-account/settings/settings.component').then(
-        (m) => m.SettingsComponent
-      ),
-  },
-  {
-    path: 'payments-history',
-    loadComponent: () =>
-      import(
-        './interface/my-account/payments-history/payments-history.component'
-      ).then((m) => m.PaymentsHistoryComponent),
-  },
-  {
-    path: 'change-password',
-    loadComponent: () =>
-      import(
-        './interface/my-account/change-password/change-password.component'
-      ).then((m) => m.ChangePasswordComponent),
+    children: [
+      { path: 'profile', component: MyProfileComponent },
+      { path: 'payments-history', component: PaymentsHistoryComponent },
+      { path: 'settings', component: SettingsComponent },
+      { path: 'change-password', component: ChangePasswordComponent },
+      { path: '', redirectTo: 'profile', pathMatch: 'full' },
+    ],
   },
 
   {
