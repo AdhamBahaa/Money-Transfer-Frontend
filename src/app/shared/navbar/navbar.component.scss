@@ -28,6 +28,10 @@ nav {
   }
 }
 
+.active-link li {
+  color: map-get($map: $theme-colors, $key: "purple");
+}
+
 .navBar {
   padding: 10px 96px;
 }

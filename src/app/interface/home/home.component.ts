@@ -6,7 +6,9 @@ import { NgIf } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
-
+import { UserService } from '../../services/user/user.service';
+import { IUserInfo } from '../../models/user.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,14 +20,38 @@ import { FooterComponent } from '../../shared/footer/footer.component';
     NavbarComponent,
     FooterComponent,
   ],
+  providers: [UserService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private readonly _Router: Router) {}
+  constructor(
+    private readonly _Router: Router,
+    private readonly _userService: UserService
+  ) {}
   buttonContent!: string;
-
   loggedIn: boolean = sessionStorage.getItem('token') != null;
+  userInfo: IUserInfo | undefined;
+  private subscription: Subscription | undefined;
+
+  ngOnInit() {
+    this.subscription = this._userService.userInfo().subscribe({
+      next: (res: IUserInfo) => {
+        console.log('INFOOO: ', res);
+        this.userInfo = res;
+        this.loggedIn = true;
+      },
+      error: (error) => {
+        console.error('Complete error:', error);
+      },
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   ngAfterContentInit() {
     if (!this.loggedIn) {

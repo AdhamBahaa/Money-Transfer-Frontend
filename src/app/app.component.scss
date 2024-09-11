@@ -3,3 +3,6 @@
   font-family: $font-stack;
   color: map-get($map: $theme-colors, $key: "black");
 }
+* {
+  font-family: inter, sans-serif, serif;
+}
