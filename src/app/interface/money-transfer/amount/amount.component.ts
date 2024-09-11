@@ -22,23 +22,23 @@ import { MoneyTransferService } from '../../../services/money-transfer/money-tra
 })
 export class AmountComponent {
   favoritesNames: string[] = [];
-  favoretesAccounts: string[] = [];
+  favoritesAccounts: number[] = [];
   amount!: number;
   recipientName!: string;
-  recipientAccount!: string;
+  recipientAccount!: number;
   form = {
     amount: null,
     recipientName: '',
-    recipientAccount: '',
+    recipientAccount: null,
   };
   constructor(
     readonly _Router: Router,
     private moneyTransferService: MoneyTransferService
   ) {}
   ngDoCheck() {
-    const favorites = this.moneyTransferService.getFavorites();
+    let favorites = this.moneyTransferService.getFavorites();
     this.favoritesNames = favorites.names;
-    this.favoretesAccounts = favorites.accounts;
+    this.favoritesAccounts = favorites.accounts;
   }
   onSubmit(form: NgForm) {
     this.moneyTransferService.setFormData(this.form);
@@ -58,6 +58,6 @@ export class AmountComponent {
   }
   insertFavData() {
     this.form.recipientName = this.favoritesNames[0];
-    this.form.recipientAccount = this.favoretesAccounts[0];
+    this.form.recipientAccount != this.favoritesAccounts[0];
   }
 }

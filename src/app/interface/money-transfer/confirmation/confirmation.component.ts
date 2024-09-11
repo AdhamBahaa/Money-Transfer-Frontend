@@ -13,9 +13,9 @@ import { MoneyTransferService } from '../../../services/money-transfer/money-tra
 })
 export class ConfirmationComponent {
   senderName: string = 'Username';
-  senderAccount: string = ' xxxx7890';
+  senderAccount: number = 245987890;
   recipientName: string = ' ';
-  recipientAccount: string = '';
+  recipientAccount: number = 0;
   amount: number = 0;
   constructor(
     private readonly _Router: Router,

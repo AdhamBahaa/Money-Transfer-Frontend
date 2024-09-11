@@ -7,6 +7,16 @@ import { ChangePasswordComponent } from './interface/my-account/change-password/
 
 export const routes: Routes = [
   {
+
+    path: 'home',
+    loadComponent: () =>
+      import('./interface/interface.component').then(
+        (m) => m.InterfaceComponent
+      ),
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+  {
     path: 'login',
     loadComponent: () =>
       import('./auth/login/login.component').then((m) => m.LoginComponent),
