@@ -32,9 +32,15 @@ export class PaymentComponent {
     this._Router.navigate(['']);
   }
   addToFavourites() {
-    this.moneyTransferService.addToFavorites(
-      this.recipientName,
-      this.recipientAccount
-    );
+    this.moneyTransferService
+      .addToFavorites(this.recipientName, this.recipientAccount)
+      .subscribe({
+        next: (response) => {
+          console.log('favorite added', response);
+        },
+        error: (error) => {
+          console.error('failed to add favorite', error);
+        },
+      });
   }
 }
