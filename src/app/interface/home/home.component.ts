@@ -22,7 +22,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
 export class HomeComponent {
   constructor(private readonly _Router: Router) {}
   buttonContent!: string;
-  loggedIn: boolean = localStorage.getItem('token') != null;
+  loggedIn: boolean = sessionStorage.getItem('token') != null;
   ngAfterContentInit() {
     if (!this.loggedIn) {
       this.buttonContent = 'Create An Account';
