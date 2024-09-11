@@ -36,7 +36,7 @@ export class AmountComponent {
     private moneyTransferService: MoneyTransferService
   ) {}
   ngDoCheck() {
-    const favorites = this.moneyTransferService.getFavorites();
+    let favorites = this.moneyTransferService.getFavorites();
     this.favoritesNames = favorites.names;
     this.favoretesAccounts = favorites.accounts;
   }
