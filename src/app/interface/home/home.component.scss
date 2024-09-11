@@ -168,4 +168,14 @@ section {
     width: 264px;
     height: 72px;
   }
+
+  #send {
+    margin: -20px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
