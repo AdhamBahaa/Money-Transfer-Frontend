@@ -35,7 +35,7 @@ export class HomeComponent {
   };
   onSubmit(form: NgForm) {}
   routeToMoneyTransfer() {
-    this._Router.navigate(['money-transfer/confirmation']);
+    this._Router.navigate(['money-transfer/amount']);
   }
   onClick() {
     if (this.loggedIn) {
