@@ -24,8 +24,8 @@ export class AuthService {
       tap((response) => {
         const { accessToken, refreshToken } = response;
         if (accessToken && refreshToken) {
-          localStorage.setItem('accessToken', accessToken);
-          localStorage.setItem('refreshToken', refreshToken);
+          sessionStorage.setItem('accessToken', accessToken);
+          sessionStorage.setItem('refreshToken', refreshToken);
         }
       })
     );

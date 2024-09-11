@@ -7,7 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CommonModule, DatePipe, NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { SmallFooterComponent } from '../shared/small-footer/small-footer.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import {
@@ -16,6 +16,7 @@ import {
 } from '../shared/utility-functions';
 import { ICreateNewAuth } from '../../models/auth.model';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -27,6 +28,8 @@ import { AuthService } from '../../services/auth/auth.service';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
+    RouterOutlet,
   ],
   providers: [AuthService],
   templateUrl: './register.component.html',
@@ -38,12 +41,15 @@ export class RegisterComponent {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
 
-  constructor(private readonly _authService: AuthService) {
+  constructor(
+    private readonly _authService: AuthService,
+    public router: Router
+  ) {
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       country: new FormControl('Choose your country', [Validators.required]),
-      day: new FormControl('', [
+      day: new FormControl('DD', [
         Validators.maxLength(2),
         Validators.min(1),
         Validators.max(31),
@@ -68,16 +74,12 @@ export class RegisterComponent {
     if (registerForm.valid) {
       const formValues = registerForm.value;
 
-      // this.datePipe.transform(
       if (formValues.year && formValues.month && formValues.day) {
         const dateOfbirth1 = new Date(
           formValues.year,
           formValues.month - 1, // JavaScript months are zero-based
           formValues.day
         ).toISOString();
-        //   'YYYY-MM-DDTHH:MM:SS.SSSZ'
-        // );
-        // registerForm.controls['dateOfbirth'].setValue(dateOfbirth1);
         if (dateOfbirth1 == null) {
           return;
         }
@@ -95,6 +97,7 @@ export class RegisterComponent {
         this._authService.createUser(newUser).subscribe({
           next: (response) => {
             console.log('User created successfully', response);
+            this.router.navigate(['/login']);
           },
           error: (error) => {
             console.error('Error creating user', error);

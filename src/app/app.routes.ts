@@ -3,15 +3,36 @@ import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
-    path: '',
+
+    path: 'home',
     loadComponent: () =>
-      import('./interface/home/home.component').then((m) => m.HomeComponent),
+      import('./interface/interface.component').then(
+        (m) => m.InterfaceComponent
+      ),
   },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   {
     path: 'login',
     loadComponent: () =>
       import('./auth/login/login.component').then((m) => m.LoginComponent),
   },
+
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./auth/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
+  {
+    path: 'welcome-back',
+    loadComponent: () =>
+      import('./auth/welcome-back/welcome-back.component').then(
+        (m) => m.WelcomeBackComponent
+      ),
+  },
+
   // routing in page My Account
   {
     path: 'my-account',
@@ -48,10 +69,11 @@ export const routes: Routes = [
         './interface/my-account/change-password/change-password.component'
       ).then((m) => m.ChangePasswordComponent),
   },
+
   {
-    path: '',
-    redirectTo: 'profile',
-    pathMatch: 'full',
+    path: 'help',
+    loadComponent: () =>
+      import('./interface/help/help.component').then((m) => m.HelpComponent),
   },
   {
     path: 'money-transfer',

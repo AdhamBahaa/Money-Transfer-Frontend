@@ -13,6 +13,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { passwordValidator } from '../shared/utility-functions';
 import { AuthService } from '../../services/auth/auth.service';
 import { ILogin } from '../../models/auth.model';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ import { ILogin } from '../../models/auth.model';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
   ],
   providers: [AuthService],
   templateUrl: './login.component.html',
@@ -34,7 +36,10 @@ export class LoginComponent {
 
   showPassword: boolean = false;
 
-  constructor(private readonly _authService: AuthService) {
+  constructor(
+    private readonly _authService: AuthService,
+    public router: Router
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, passwordValidator()]),
@@ -55,6 +60,7 @@ export class LoginComponent {
       this._authService.login(loginData).subscribe({
         next: (response) => {
           console.log('Login successful', response);
+          this.router.navigate(['/home']);
         },
         error: (error) => {
           console.error('Login failed', error);

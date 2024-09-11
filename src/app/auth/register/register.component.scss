@@ -89,7 +89,8 @@ input {
 
 #country,
 #month,
-#year {
+#year,
+#day {
   font-size: 16px;
   color: #898886;
   font-family: inter, sans-serif, serif;
@@ -102,11 +103,11 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#day,
-.dayDiv {
-  width: 30%;
+#day {
+  padding-right: 50px;
 }
 
 .monthDiv {
-  width: 45%;
+  width: 50%;
+  // gro
 }

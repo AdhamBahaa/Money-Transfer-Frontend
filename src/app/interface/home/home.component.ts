@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MobileAppComponent } from '../../shared/mobile-app/mobile-app.component';
 import { NgIf } from '@angular/common';
+
 import { FormsModule, NgForm } from '@angular/forms';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
+
 
 @Component({
   selector: 'app-home',
@@ -22,7 +24,9 @@ import { FooterComponent } from '../../shared/footer/footer.component';
 export class HomeComponent {
   constructor(private readonly _Router: Router) {}
   buttonContent!: string;
+
   loggedIn: boolean = sessionStorage.getItem('token') != null;
+
   ngAfterContentInit() {
     if (!this.loggedIn) {
       this.buttonContent = 'Create An Account';
@@ -30,6 +34,7 @@ export class HomeComponent {
       this.buttonContent = 'Transfer Now';
     }
   }
+
   form = {
     amount: null,
   };

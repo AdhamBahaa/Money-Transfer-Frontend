@@ -76,6 +76,7 @@ li {
   margin-right: 5px;
 }
 
+// removing the default icon form dropdown
 .dropdown-toggle::after {
   display: none !important;
 }
