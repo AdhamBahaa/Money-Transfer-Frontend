@@ -66,4 +66,10 @@ export const routes: Routes = [
         './interface/my-account/change-password/change-password.component'
       ).then((m) => m.ChangePasswordComponent),
   },
+
+  {
+    path: 'help',
+    loadComponent: () =>
+      import('./interface/help/help.component').then((m) => m.HelpComponent),
+  },
 ];

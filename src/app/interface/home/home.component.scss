@@ -23,9 +23,14 @@ header {
     top: 311px;
     left: 863px;
     padding: 32px;
-    gap: 32px;
+    gap: 16px;
     border-radius: 8px;
     background-color: #ffffff;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
   .balance {
     width: 417px;
@@ -82,8 +87,8 @@ header {
     height: 120px;
   }
   .create-account-button {
-    width: 192px;
-    height: 56px;
+    // width: 192px;
+    // height: 56px;
     padding: 16px 32px 16px 32px;
     border-radius: 6.5px;
     background-color: #871e35;
@@ -169,13 +174,4 @@ section {
     height: 72px;
   }
 
-  #send {
-    margin: -20px;
-  }
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
 }

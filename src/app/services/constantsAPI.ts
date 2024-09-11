@@ -1,9 +1,11 @@
-export const userAPI = 'https://moneytransfer-s6gm.onrender.com/api/v1/user';
+export const userAPI =
+  'https://moneyapi-abatdad9bbgvc3bs.francecentral-01.azurewebsites.net/api/v1/user';
 
 export const favouriteAPI =
-  'https://moneytransfer-s6gm.onrender.com/api/v1/user/Favourite';
+  'https://moneyapi-abatdad9bbgvc3bs.francecentral-01.azurewebsites.net/api/v1/user/Favourite';
 
-export const authAPI = 'https://moneytransfer-s6gm.onrender.com/api/v1/auth';
+export const authAPI =
+  'https://moneyapi-abatdad9bbgvc3bs.francecentral-01.azurewebsites.net/api/v1/auth';
 
 export const accountAPI =
-  'https://moneytransfer-s6gm.onrender.com/api/v1/accounts';
+  'https://moneyapi-abatdad9bbgvc3bs.francecentral-01.azurewebsites.net/api/v1/accounts';
