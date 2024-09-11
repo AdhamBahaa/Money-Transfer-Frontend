@@ -1,1 +1,186 @@
-<p>amount works!</p>
+<app-navbar></app-navbar>
+<header class="d-flex justify-content-between">
+  <div class="d-flex flex-column justify-content-center align-content-center">
+    <h1>Money Transfer</h1>
+    <ul class="d-flex">
+      <li class="list-unstyled home body-medium">Home</li>
+      <li class="about-us body-medium">About Us</li>
+      <li class="amount body-medium">Amount</li>
+    </ul>
+  </div>
+  <div>
+    <img src="currency.png" alt="currency photo" />
+  </div>
+</header>
+<div
+  class="middle-section d-flex flex-column justify-content-center align-items-center"
+>
+  <div
+    class="progress-steps d-flex flex-column justify-content-center align-items-center"
+  >
+    <div
+      class="progress-steps-imgs d-flex justify-content-center align-items-center"
+    >
+      <img src="/Step1.svg" alt="step1" class="step" />
+      <img src="/LineRed.svg" alt="line" class="line" />
+      <img src="/Step2Grey.svg" alt="step2" class="step" />
+      <img src="/LineGrey.svg" alt="line" class="line" />
+      <img src="/Step3Grey.svg" alt="step3" class="step" />
+    </div>
+    <div class="progress-steps-text d-flex">
+      <p class="amount body-medium">Amount</p>
+      <p class="confirmation body-regular">confirmation</p>
+      <p class="payement body-regular">Payement</p>
+    </div>
+  </div>
+  <div class="middle-section-content">
+    <div class="middle-section-title">How much are you sending?</div>
+    <div class="middle-section-body">
+      <form #amountForm="ngForm" (ngSubmit)="onSubmit(amountForm)">
+        <div class="amount">
+          <label for="amount" class="body-regular">Amount</label>
+          <input
+            name="amount"
+            id="amount"
+            type="number"
+            required
+            placeholder="1000"
+            [(ngModel)]="form.amount"
+            #amountInput="ngModel"
+          />
+        </div>
+        @if(amountInput.touched && amountInput.invalid){
+        <small class="error">This Field Is Required</small>
+        }
+        <br />
+        <div
+          class="d-flex justify-content-between"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          <p style="color: #3c3a37">Recipient Information</p>
+          <div class="favorites d-flex">
+            <img
+              src="favoritesIcon.svg"
+              alt="star"
+              class="fav-icon align-self-center"
+            />
+            <p class="p-regular">Favourite</p>
+            <img
+              src="arrowIcon.svg"
+              alt="arrow"
+              class="arrow-icon align-self-center"
+            />
+          </div>
+        </div>
+        <div class="recipient-name">
+          <label for="recipient-name" class="body-regular"
+            >Recipient Name</label
+          >
+          <input
+            name="recipient-name"
+            id="recipient-name"
+            type="text"
+            required
+            [(ngModel)]="form.recipientName"
+            #recipientNameInput="ngModel"
+          />
+        </div>
+        @if(recipientNameInput.touched && recipientNameInput.invalid){
+        <small class="error">This Field Is Required</small>
+        }
+        <br />
+
+        <div class="recipient-account">
+          <label for="recipient-account" class="body-regular"
+            >Recipient Account</label
+          >
+          <input
+            name="recipient-account"
+            id="recipient-account"
+            type="text"
+            required
+            [(ngModel)]="form.recipientAccount"
+            #recipientAccountInput="ngModel"
+          />
+        </div>
+        @if(recipientAccountInput.touched && recipientAccountInput.invalid){
+        <small class="error">This Field Is Required</small>
+        }
+        <br />
+        <button type="submit" (click)="routeToConfirmation()">
+          <span class="body-medium">Continue</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<app-mobile-app></app-mobile-app>
+<app-footer></app-footer>
+
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div
+      class="fav-list-popup modal-content d-flex flex-column justify-content-center p-4"
+    >
+      <button
+        type="button"
+        class="btn-close align-self-end"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+      <div
+        class="modal-title favorites-list-title d-flex"
+        id="staticBackdropLabel"
+      >
+        <img
+          src="favoritesIcon.svg"
+          alt="star"
+          class="fav-list-icon align-self-center"
+        />
+        <p class="p-regular">Favourite List</p>
+      </div>
+      <div
+        class="modal-body fav-list"
+        *ngFor="let name of favoritesNames; let i = index"
+      >
+        <div class="info d-flex align-items-center" (click)="insertFavData()">
+          <div
+            class="bank-icon d-flex justify-content-center align-items-center"
+          >
+            <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+          </div>
+          <div class="info-content d-flex flex-column">
+            <p class="p-semi-bold recep-name" style="color: #3c3a37">
+              {{ name }}
+            </p>
+            <p class="body-regular" style="color: #898886">
+              Account {{ favoretesAccounts[i] }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="info d-flex align-items-center">
+  <div class="bank-icon d-flex justify-content-center align-items-center">
+    <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+  </div>
+  <div class="info-content d-flex flex-column">
+    <p class="body-medium" style="color: #871e35">To</p>
+    <p class="p-semi-bold" style="color: #3c3a37">{{ recipientName }}</p>
+    <p class="body-regular" style="color: #898886">
+      Account {{ recipientAccount }}
+    </p>
+  </div>
+</div> -->

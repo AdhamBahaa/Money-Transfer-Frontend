@@ -1,0 +1,146 @@
+header {
+  background-image: url("/public/background1.png");
+  background-color: #f3e9eb;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 96px 96px;
+  height: 404px;
+  background-color: #f3e9eb;
+  h1 {
+    width: 1061.65px;
+    height: 60px;
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    color: #24221e;
+  }
+  ul {
+    width: 411.03px;
+    line-height: 24px;
+    gap: 5px;
+    .home {
+      width: 54px;
+      height: 24px;
+      color: #3c3a37;
+      padding-right: 30px;
+    }
+    .about-us {
+      width: 77px;
+      height: 24px;
+      color: #3c3a37;
+    }
+    .confirmation {
+      width: 101px;
+      height: 24px;
+      color: #871e35;
+    }
+  }
+}
+.middle-section {
+  height: 933.77px;
+  background-color: #ffffff;
+  .progress-steps {
+    width: 300.25px;
+    height: 108.08px;
+    top: 583px;
+    left: 570px;
+    gap: 20px;
+    color: #24221e;
+    .progress-steps-imgs {
+      width: 283px;
+      height: 48px;
+      top: 583px;
+      left: 576.75px;
+      gap: 8px;
+      .step {
+        width: 48px;
+        height: 48px;
+        gap: 10px;
+      }
+      .line {
+        width: 54px;
+        height: 32px;
+      }
+    }
+    .progress-steps-text {
+      gap: 28px;
+    }
+    .amount {
+      width: 61px;
+      height: 24px;
+      top: 667.08px;
+      left: 570px;
+      color: #24221e;
+    }
+    .confirmation {
+      width: 98px;
+      height: 24px;
+      top: 667.08px;
+      left: 669.5px;
+      color: #24221e;
+    }
+    .payement {
+      width: 67px;
+      height: 24px;
+      top: 667.08px;
+      left: 803.25px;
+      color: #3c3a37;
+    }
+  }
+  .middle-section-content {
+    width: 589.64px;
+    height: 588px;
+    .total-amount {
+      width: 560.75px;
+      height: 56px;
+    }
+    .bank-icon {
+      width: 48px;
+      height: 48px;
+      background-color: #e3e2e2;
+      border-radius: 50%;
+      .bank-icon-img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .info {
+      width: 560.75px;
+      height: 142px;
+      padding: 16px;
+      gap: 32px;
+      border-radius: 8px;
+      background-color: #f6f6f6;
+      .info-content {
+        width: 377.64px;
+        height: 110px;
+      }
+    }
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+      .arrow-icon-img {
+        width: 19.07px;
+        height: 19.07px;
+      }
+    }
+    button {
+      width: 560.75px;
+      height: 56px;
+      padding: 16px 32px;
+      border-radius: 6.5px;
+      border-width: 1px;
+    }
+    .confirm-btn {
+      background-color: #871e35;
+      border-color: #871e35;
+      color: #ffffff;
+    }
+    .back-btn {
+      background-color: #ffffff;
+      border-color: #24221e;
+      color: #24221e;
+    }
+  }
+}
