@@ -22,14 +22,14 @@ import { MoneyTransferService } from '../../../services/money-transfer/money-tra
 })
 export class AmountComponent {
   favoritesNames: string[] = [];
-  favoretesAccounts: string[] = [];
+  favoretesAccounts: number[] = [];
   amount!: number;
   recipientName!: string;
-  recipientAccount!: string;
+  recipientAccount!: number;
   form = {
     amount: null,
     recipientName: '',
-    recipientAccount: '',
+    recipientAccount: null,
   };
   constructor(
     readonly _Router: Router,
@@ -58,6 +58,6 @@ export class AmountComponent {
   }
   insertFavData() {
     this.form.recipientName = this.favoritesNames[0];
-    this.form.recipientAccount = this.favoretesAccounts[0];
+    this.form.recipientAccount != this.favoretesAccounts[0];
   }
 }

@@ -19,9 +19,9 @@ export class MoneyTransferService {
     return this.formData;
   }
   favoritesNames: string[] = ['Asmaa Dosuky', 'Asmaa Dosuky'];
-  favoretesAccounts: string[] = ['123456789456', '123456789456'];
+  favoretesAccounts: number[] = [123456789456, 123456789456];
 
-  addToFavorites(name: string, account: string): Observable<IFavourite> {
+  addToFavorites(name: string, account: number): Observable<IFavourite> {
     this.favoritesNames.push(name);
     this.favoretesAccounts.push(account);
     return (

@@ -3,7 +3,6 @@ import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
-
     path: 'home',
     loadComponent: () =>
       import('./interface/interface.component').then(
