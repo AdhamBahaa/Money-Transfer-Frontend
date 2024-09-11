@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit {
       next: (res: IUserInfo) => {
         console.log('INFOOO: ', res);
         this.userInfo = res;
+        this.loggedIn = true;
       },
       error: (error) => {
         console.error('Complete error:', error);
@@ -36,7 +37,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    // Clean up the subscription to avoid memory leaks
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
@@ -46,5 +46,19 @@ export class NavbarComponent implements OnInit {
     sessionStorage.removeItem('accessToken');
     sessionStorage.removeItem('refreshToken');
     this.router.navigate(['login']);
+  }
+
+  getUserInitials(): string {
+    if (!this.userInfo || !this.userInfo.name) {
+      return 'UN'; // Default initials if the userInfo or name is not available
+    }
+
+    const nameParts = this.userInfo.name.split(' ');
+    const initials = nameParts
+      .map((part) => part.charAt(0).toUpperCase())
+      .join('')
+      .slice(0, 2); // Get the first two initials
+
+    return initials;
   }
 }

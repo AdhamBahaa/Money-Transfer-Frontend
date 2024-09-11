@@ -5,10 +5,18 @@
     </div>
     <div class="d-flex justify-content-center align-items-center">
       <ul class="d-flex pt-3 list-unstyled pageList">
-        <a routerLink="/home"><li class="px-3">Home</li></a>
-        <a routerLink="/money-transfer"><li class="px-3">Money Transfer</li></a>
-        <a routerLink="/my-account"><li class="px-3">My Account</li></a>
-        <a routerLink="/help"><li class="px-3">Help</li></a>
+        <a routerLink="/home" routerLinkActive="active-link"
+          ><li class="px-3">Home</li></a
+        >
+        <a routerLink="/money-transfer" routerLinkActive="active-link"
+          ><li class="px-3">Money Transfer</li></a
+        >
+        <a routerLink="/my-account" routerLinkActive="active-link"
+          ><li class="px-3">My Account</li></a
+        >
+        <a routerLink="/help" routerLinkActive="active-link"
+          ><li class="px-3">Help</li></a
+        >
       </ul>
 
       <!-- Next Section will be dependent on log-in -->
@@ -43,7 +51,9 @@
           aria-haspopup="true"
           (click)="toggleIconVisibility()"
         >
-          <span class="userInitials rounded-circle">UN</span>
+          <span class="userInitials rounded-circle">{{
+            getUserInitials()
+          }}</span>
           {{ userInfo?.name }}
           <span class="icon ps-1" (click)="toggleIconVisibility()">
             <i

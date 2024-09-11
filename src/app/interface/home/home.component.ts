@@ -8,6 +8,7 @@ import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { UserService } from '../../services/user/user.service';
 import { IUserInfo } from '../../models/user.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,26 @@ export class HomeComponent {
   buttonContent!: string;
   loggedIn: boolean = sessionStorage.getItem('token') != null;
   userInfo: IUserInfo | undefined;
+  private subscription: Subscription | undefined;
+
+  ngOnInit() {
+    this.subscription = this._userService.userInfo().subscribe({
+      next: (res: IUserInfo) => {
+        console.log('INFOOO: ', res);
+        this.userInfo = res;
+        this.loggedIn = true;
+      },
+      error: (error) => {
+        console.error('Complete error:', error);
+      },
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   ngAfterContentInit() {
     if (!this.loggedIn) {

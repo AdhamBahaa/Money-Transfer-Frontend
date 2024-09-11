@@ -13,6 +13,7 @@ import { passwordValidator } from '../shared/utility-functions';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ILogin } from '../../models/auth.model';
 import { AuthService } from '../../services/auth/auth.service';
+import { InactivityService } from '../../services/inActive/in-active.service';
 
 @Component({
   selector: 'app-welcome-back',
