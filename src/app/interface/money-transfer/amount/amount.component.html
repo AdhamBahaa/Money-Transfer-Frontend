@@ -46,8 +46,12 @@
             required
             placeholder="1000"
             [(ngModel)]="form.amount"
+            #amountInput="ngModel"
           />
         </div>
+        @if(amountInput.touched && amountInput.invalid){
+        <small class="error">This Field Is Required</small>
+        }
         <br />
         <div class="p-regular d-flex justify-content-between">
           <p style="color: #3c3a37">Recipient Information</p>
@@ -78,7 +82,7 @@
             #recipientNameInput="ngModel"
           />
         </div>
-        @if(recipientNameInput.invalid && recipientNameInput.dirty){
+        @if(recipientNameInput.touched && recipientNameInput.invalid){
         <small class="error">This Field Is Required</small>
         }
         <br />
@@ -90,11 +94,15 @@
           <input
             name="recipient-account"
             id="recipient-account"
-            type="number"
+            type="text"
             required
             [(ngModel)]="form.recipientAccount"
+            #recipientAccountInput="ngModel"
           />
         </div>
+        @if(recipientAccountInput.touched && recipientAccountInput.invalid){
+        <small class="error">This Field Is Required</small>
+        }
         <br />
         <button type="submit" (click)="routeToConfirmation()">
           <span class="body-medium">Continue</span>
