@@ -132,6 +132,7 @@ header {
         height: 30px;
         gap: 8px;
         color: #871e35;
+
         .fav-icon {
           width: 24px;
           height: 24px;
@@ -145,6 +146,43 @@ header {
         color: rgb(247, 8, 8);
         font-size: 12px;
       }
+    }
+  }
+}
+.fav-list-popup {
+  width: 675px !important;
+
+  .favorites-list-title {
+    width: 160px;
+    height: 30px;
+    gap: 8px;
+    color: #871e35;
+    .fav-list-icon {
+      width: 24px;
+      height: 24px;
+      padding: 2.44px 1.97px 2.43px 2.01px;
+    }
+  }
+  .bank-icon {
+    width: 84px;
+    height: 84px;
+    background-color: #e3e2e2;
+    border-radius: 50%;
+    .bank-icon-img {
+      width: 56px;
+      height: 56px;
+    }
+  }
+  .info {
+    width: 567px;
+    height: 116px;
+    padding: 16px;
+    gap: 32px;
+    border-radius: 8px;
+    background-color: #f6f6f6;
+    .info-content {
+      width: 205px;
+      height: 70px;
     }
   }
 }

@@ -15,4 +15,18 @@ export class MoneyTransferService {
   getFormData() {
     return this.formData;
   }
+  favoritesNames: string[] = ['Asmaa Dosuky', 'Asmaa Dosuky'];
+  favoretesAccounts: string[] = ['123456789456', '123456789456'];
+
+  addToFavorites(name: string, account: string) {
+    this.favoritesNames.push(name);
+    this.favoretesAccounts.push(account);
+  }
+
+  getFavorites() {
+    return {
+      names: this.favoritesNames,
+      accounts: this.favoretesAccounts,
+    };
+  }
 }

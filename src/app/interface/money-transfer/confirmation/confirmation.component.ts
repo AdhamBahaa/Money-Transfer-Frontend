@@ -12,7 +12,7 @@ import { MoneyTransferService } from '../../../services/money-transfer/money-tra
   styleUrl: './confirmation.component.scss',
 })
 export class ConfirmationComponent {
-  senderName: string = 'Jonathon Smith';
+  senderName: string = 'Username';
   senderAccount: string = ' xxxx7890';
   recipientName: string = ' ';
   recipientAccount: string = '';

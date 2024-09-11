@@ -53,7 +53,11 @@
         <small class="error">This Field Is Required</small>
         }
         <br />
-        <div class="p-regular d-flex justify-content-between">
+        <div
+          class="d-flex justify-content-between"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
           <p style="color: #3c3a37">Recipient Information</p>
           <div class="favorites d-flex">
             <img
@@ -61,7 +65,7 @@
               alt="star"
               class="fav-icon align-self-center"
             />
-            <p>Favourite</p>
+            <p class="p-regular">Favourite</p>
             <img
               src="arrowIcon.svg"
               alt="arrow"
@@ -113,3 +117,70 @@
 </div>
 <app-mobile-app></app-mobile-app>
 <app-footer></app-footer>
+
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div
+      class="fav-list-popup modal-content d-flex flex-column justify-content-center p-4"
+    >
+      <button
+        type="button"
+        class="btn-close align-self-end"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+      <div
+        class="modal-title favorites-list-title d-flex"
+        id="staticBackdropLabel"
+      >
+        <img
+          src="favoritesIcon.svg"
+          alt="star"
+          class="fav-list-icon align-self-center"
+        />
+        <p class="p-regular">Favourite List</p>
+      </div>
+      <div
+        class="modal-body fav-list"
+        *ngFor="let name of favoritesNames; let i = index"
+      >
+        <div class="info d-flex align-items-center" (click)="insertFavData()">
+          <div
+            class="bank-icon d-flex justify-content-center align-items-center"
+          >
+            <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+          </div>
+          <div class="info-content d-flex flex-column">
+            <p class="p-semi-bold recep-name" style="color: #3c3a37">
+              {{ name }}
+            </p>
+            <p class="body-regular" style="color: #898886">
+              Account {{ favoretesAccounts[i] }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="info d-flex align-items-center">
+  <div class="bank-icon d-flex justify-content-center align-items-center">
+    <img class="bank-icon-img" src="bankIcon.svg" alt="bank-icon" />
+  </div>
+  <div class="info-content d-flex flex-column">
+    <p class="body-medium" style="color: #871e35">To</p>
+    <p class="p-semi-bold" style="color: #3c3a37">{{ recipientName }}</p>
+    <p class="body-regular" style="color: #898886">
+      Account {{ recipientAccount }}
+    </p>
+  </div>
+</div> -->
