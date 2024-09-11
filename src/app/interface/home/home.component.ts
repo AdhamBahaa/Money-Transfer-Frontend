@@ -37,4 +37,11 @@ export class HomeComponent {
   routeToMoneyTransfer() {
     this._Router.navigate(['money-transfer/confirmation']);
   }
+  onClick() {
+    if (this.loggedIn) {
+      this._Router.navigate(['money-transfer/amount']);
+    } else {
+      this._Router.navigate(['register']);
+    }
+  }
 }

@@ -95,4 +95,11 @@ export const routes: Routes = [
         (m) => m.NotFoundComponent
       ),
   },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./auth/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
 ];
