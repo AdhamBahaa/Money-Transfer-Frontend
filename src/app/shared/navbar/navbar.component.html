@@ -5,22 +5,24 @@
     </div>
     <div class="d-flex justify-content-center align-items-center">
       <ul class="d-flex pt-3 list-unstyled pageList">
-        <a href="#"><li class="px-3">Home</li></a>
-        <a href="#"><li class="px-3">Money Transfer</li></a>
-        <a href="#"><li class="px-3">My Account</li></a>
-        <a href="#"><li class="px-3">Help</li></a>
+        <a routerLink="/home"><li class="px-3">Home</li></a>
+        <a><li class="px-3">Money Transfer</li></a>
+        <a routerLink="/my-account"><li class="px-3">My Account</li></a>
+        <a routerLink="/help"><li class="px-3">Help</li></a>
       </ul>
 
       <!-- Next Section will be dependent on log-in -->
       <!-- Not Looged In -->
-      <!-- <div class="ps-3 d-flex">
+
+      @if(!this.loggedIn){
+
+      <div class="ps-3 d-flex">
         <button type="button" class="btn btn-outline-dark buttonClass">
           Login
         </button>
         <button type="button" class="btn ms-3 buttonReg">Register Now</button>
-      </div> -->
-
-      <!-- Logged In -->
+      </div>
+      } @else{
 
       <div class="dropdown">
         <button
@@ -56,24 +58,13 @@
             <a class="dropdown-item" href="#">Change Password</a>
           </li>
           <li>
-            <a class="dropdown-item" [routerLink]="['login']">Logout</a>
+            <a class="dropdown-item" routerLink="/login">Logout</a>
           </li>
         </ul>
       </div>
+      }
 
-      <!-- <div class="dropdown">
-        <button class="dropbtn">
-          Dropdown
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div> -->
+      <!-- Logged In -->
     </div>
   </div>
 </nav>
-
-<router-outlet></router-outlet>
