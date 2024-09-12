@@ -7,7 +7,6 @@ import { ChangePasswordComponent } from './interface/my-account/change-password/
 
 export const routes: Routes = [
   {
-
     path: 'home',
     loadComponent: () =>
       import('./interface/interface.component').then(
@@ -51,6 +50,7 @@ export const routes: Routes = [
       import('./interface/my-account/my-account.component').then(
         (m) => m.MyAccountComponent
       ),
+    canActivate: [authGuard],
     children: [
       { path: 'profile', component: MyProfileComponent },
       { path: 'payments-history', component: PaymentsHistoryComponent },
@@ -96,22 +96,10 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path: 'help',
-    loadComponent: () =>
-      import('./interface/help/help.component').then((m) => m.HelpComponent),
-  },
-  {
     path: 'not-found',
     loadComponent: () =>
       import('./interface/not-found/not-found.component').then(
         (m) => m.NotFoundComponent
-      ),
-  },
-  {
-    path: 'register',
-    loadComponent: () =>
-      import('./auth/register/register.component').then(
-        (m) => m.RegisterComponent
       ),
   },
 ];
