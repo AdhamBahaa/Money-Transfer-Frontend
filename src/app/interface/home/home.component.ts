@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { MobileAppComponent } from '../../shared/mobile-app/mobile-app.component';
 import { NgIf } from '@angular/common';
@@ -29,7 +29,7 @@ export class HomeComponent {
     private readonly _Router: Router,
     private readonly _userService: UserService
   ) {}
-  buttonContent!: string;
+  buttonContent: string = 'Create An Account';
   loggedIn: boolean = sessionStorage.getItem('token') != null;
   userInfo: IUserInfo | undefined;
   private subscription: Subscription | undefined;
@@ -37,9 +37,10 @@ export class HomeComponent {
   ngOnInit() {
     this.subscription = this._userService.userInfo().subscribe({
       next: (res: IUserInfo) => {
-        console.log('INFOOO: ', res);
+        console.log('INFO: ', res);
         this.userInfo = res;
         this.loggedIn = true;
+        this.updateButtonContent();
       },
       error: (error) => {
         console.error('Complete error:', error);
@@ -53,7 +54,8 @@ export class HomeComponent {
     }
   }
 
-  ngAfterContentInit() {
+
+  updateButtonContent() {
     if (!this.loggedIn) {
       this.buttonContent = 'Create An Account';
     } else {

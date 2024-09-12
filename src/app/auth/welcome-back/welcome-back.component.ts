@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ILogin } from '../../models/auth.model';
 import { AuthService } from '../../services/auth/auth.service';
 import { InactivityService } from '../../services/inActive/in-active.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-back',
@@ -36,7 +37,10 @@ export class WelcomeBackComponent {
   showToast = true;
   showPassword: boolean = false;
 
-  constructor(private readonly _authService: AuthService) {
+  constructor(
+    private readonly _authService: AuthService,
+    public router: Router
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, passwordValidator()]),
@@ -57,6 +61,7 @@ export class WelcomeBackComponent {
       this._authService.login(loginData).subscribe({
         next: (response) => {
           console.log('Login successful', response);
+          this.router.navigate(['/home']);
         },
         error: (error) => {
           console.error('Login failed', error);
@@ -64,6 +69,7 @@ export class WelcomeBackComponent {
       });
     } else {
       console.log('Form is invalid');
+      alert('Invalid Credentials, please try again!');
     }
   }
 }
