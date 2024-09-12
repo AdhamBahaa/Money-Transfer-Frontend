@@ -97,6 +97,13 @@ export class AmountComponent {
   }
   routeToConfirmation() {
     if (
+      this.form.amount == null ||
+      this.form.recipientAccount == null ||
+      this.form.recipientName == null
+    ) {
+      alert('Please enter data in the empty input field(s)');
+    }
+    if (
       this.form.amount != null &&
       this.form.recipientAccount != null &&
       this.form.recipientName != null

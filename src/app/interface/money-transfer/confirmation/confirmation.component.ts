@@ -11,6 +11,7 @@ import {
   ITransaction,
   ITransactionResponse,
 } from '../../../models/account.model';
+
 @Component({
   selector: 'app-confirmation',
   standalone: true,
@@ -18,6 +19,7 @@ import {
   templateUrl: './confirmation.component.html',
   styleUrl: './confirmation.component.scss',
 })
+
 export class ConfirmationComponent implements OnInit {
   userInfo: IUserInfo | undefined;
   private subscription: Subscription | undefined;
@@ -36,14 +38,29 @@ export class ConfirmationComponent implements OnInit {
   //   status: '',
   //   transactionTime: new Date(),
   // };
+
   constructor(
     private readonly _Router: Router,
     private moneyTransferService: MoneyTransferService,
     private readonly _userService: UserService
   ) {}
+  ngOnInit() {
+    this.subscription = this._userService.userInfo().subscribe({
+      next: (res: IUserInfo) => {
+        console.log('INFO: ', res);
+        this.userInfo = res;
+      },
+      error: (error) => {
+        console.error('Complete error:', error);
+      },
+    });
+    this.senderName = this.userInfo?.name || 'Username';
+    this.senderAccount = this.userInfo?.accounts;
+  }
+
   ngDoCheck() {
     const formData = this.moneyTransferService.getFormData();
-    this.recipientName = formData.recipientName || 'Asmaa Dosuky';
+    this.recipientName = formData.recipientName || 'Recipient Name';
     this.recipientAccount = formData.recipientAccount || ' xxxx7890';
     this.amount = formData.amount || 1000;
   }

@@ -6,6 +6,10 @@ import { NavbarComponent } from '../../../shared/navbar/navbar.component';
 import { MoneyTransferService } from '../../../services/money-transfer/money-transfer.service';
 import { FavouriteService } from '../../../services/favourite/favourite.service';
 import { IFavourite } from '../../../models/favourite.model';
+import { UserService } from '../../../services/user/user.service';
+import { IUserInfo } from '../../../models/user.model';
+import { Subscription } from 'rxjs';
+import { IAccountUser } from '../../../models/account.model';
 
 @Component({
   selector: 'app-payment',
@@ -15,19 +19,37 @@ import { IFavourite } from '../../../models/favourite.model';
   styleUrl: './payment.component.scss',
 })
 export class PaymentComponent {
-  senderName: string = 'Username';
-  senderAccount: number = 234547890;
+  senderName: string | undefined;
+  senderAccount: IAccountUser[] | undefined;
   @Input() recipientName!: string;
   @Input() recipientAccount!: number;
   amount: number = 0;
+  userInfo: IUserInfo | undefined;
+
+  private subscription: Subscription | undefined;
+
   constructor(
     private readonly _Router: Router,
     private moneyTransferService: MoneyTransferService,
-    private favouriteService: FavouriteService
+    private favouriteService: FavouriteService,
+    private readonly _userService: UserService
   ) {}
+  ngOnInit() {
+    this.subscription = this._userService.userInfo().subscribe({
+      next: (res: IUserInfo) => {
+        console.log('INFO: ', res);
+        this.userInfo = res;
+      },
+      error: (error) => {
+        console.error('Complete error:', error);
+      },
+    });
+    this.senderName = this.userInfo?.name || 'Username';
+    this.senderAccount = this.userInfo?.accounts;
+  }
   ngDoCheck() {
     const formData = this.moneyTransferService.getFormData();
-    this.recipientName = formData.recipientName || 'Asmaa Dosuky';
+    this.recipientName = formData.recipientName || 'Recipient Name';
     this.recipientAccount = formData.recipientAccount || ' xxxx7890';
     this.amount = formData.amount || 1000;
   }
