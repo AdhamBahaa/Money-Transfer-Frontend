@@ -26,6 +26,8 @@ export interface ITransaction {
   accountSender: number;
   accountReciever: number;
   amount: number;
+  senderName: string;
+  recieverName: string;
 }
 //
 export interface ITransactionResponse {
@@ -34,6 +36,8 @@ export interface ITransactionResponse {
   amount: number;
   status: string;
   transactionTime: Date;
+  senderName: string;
+  receiverName: string;
 }
 
 //// I don't konw should I right this in the model?
