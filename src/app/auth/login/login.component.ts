@@ -42,7 +42,7 @@ export class LoginComponent {
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, passwordValidator()]),
+      password: new FormControl('', [Validators.required]),
     });
   }
 
@@ -64,10 +64,12 @@ export class LoginComponent {
         },
         error: (error) => {
           console.error('Login failed', error);
+          alert('Invalid Credentials, please try again!');
         },
       });
     } else {
       console.log('Form is invalid');
+      alert('Please enter data in the empty input field(s)');
     }
   }
 }

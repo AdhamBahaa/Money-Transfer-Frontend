@@ -101,6 +101,7 @@ export class RegisterComponent {
           },
           error: (error) => {
             console.error('Error creating user', error);
+            alert('Error Creating user, please ty again!');
           },
         });
       } else {
@@ -108,6 +109,7 @@ export class RegisterComponent {
       }
     } else {
       console.log('Form is invalid');
+      alert('Please enter data in the empty input field(s)');
     }
   }
 }
