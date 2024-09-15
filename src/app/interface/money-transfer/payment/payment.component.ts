@@ -20,7 +20,8 @@ import { IAccountUser } from '../../../models/account.model';
 })
 export class PaymentComponent {
   senderName: string | undefined;
-  senderAccount: IAccountUser[] | undefined;
+  // senderAccount: IAccountUser[] | undefined;
+  senderAccount: number = 245987890;
   @Input() recipientName!: string;
   @Input() recipientAccount!: number;
   amount: number = 0;
@@ -39,13 +40,14 @@ export class PaymentComponent {
       next: (res: IUserInfo) => {
         console.log('INFO: ', res);
         this.userInfo = res;
+        this.senderName = res.name;
       },
       error: (error) => {
         console.error('Complete error:', error);
       },
     });
-    this.senderName = this.userInfo?.name || 'Username';
-    this.senderAccount = this.userInfo?.accounts;
+    // this.senderName = this.userInfo?.name || 'Username';
+    // this.senderAccount = this.userInfo?.accounts;
   }
   ngDoCheck() {
     const formData = this.moneyTransferService.getFormData();
