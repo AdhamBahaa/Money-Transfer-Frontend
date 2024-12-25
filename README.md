@@ -1,33 +1,36 @@
 # Speedo Transfer
 
+## Landing Page
+
+![image](https://github.com/user-attachments/assets/6af614c3-b3b5-4480-82c5-c8d3ec3609db)
+
+
 ## Regesiter and Login Page
 
-![image](https://github.com/user-attachments/assets/f912757d-6251-4a1c-af5c-c5fb6995153e) ![image](https://github.com/user-attachments/assets/4bde9098-2e8f-47f7-8fb2-04803446c508)
+![image](https://github.com/user-attachments/assets/03ff2ffb-6271-428b-a616-e0c24d442198) ![image](https://github.com/user-attachments/assets/b4310974-53db-433b-9393-0c0ca44b8122)
 
 
 ## Home Page
 
-![image](https://github.com/user-attachments/assets/d9dcae0f-ce4b-43fc-95eb-1dc730572d6c)
+![image](https://github.com/user-attachments/assets/8f317789-777a-4396-a73a-1e669c5af509)
 
 
 ## Money Transfer
 
-![image](https://github.com/user-attachments/assets/6b8b9ab7-54d0-4d4e-ab56-ea0369f62919) ![image](https://github.com/user-attachments/assets/400682b8-6db8-42ab-b40e-14220b410d2e) ![image](https://github.com/user-attachments/assets/1d5e611e-b701-4cbe-a900-b6c6228f499f)
+![image](https://github.com/user-attachments/assets/4432a9da-1133-4d16-874f-0fc5e1a981c7) ![image](https://github.com/user-attachments/assets/a77b6619-0790-4f0b-9bae-83a5e6975f14) ![image](https://github.com/user-attachments/assets/2738f1b0-73e4-4558-97db-1fc7f1b1e198)
+
 
 
 ## My Account Page
 
-- My Profile: ![image](https://github.com/user-attachments/assets/d1db7d72-1804-421a-9fc6-f221e00827e4)
+![image](https://github.com/user-attachments/assets/1029453a-7491-4549-b18a-99ab5a5f196b) ![image](https://github.com/user-attachments/assets/8d7a62df-1ffe-4f9d-b4f6-0607b9013060)
+![image](https://github.com/user-attachments/assets/9d79145f-8578-4427-ab32-0d59e29141b0) ![image](https://github.com/user-attachments/assets/82a0c75c-52ab-473e-b783-af5413e5d43d)
 
-- Payments History: ![image](https://github.com/user-attachments/assets/c5bf01b1-a541-453a-975b-a4e97e809533)
-
-- Settings: ![image](https://github.com/user-attachments/assets/4d354cf1-9136-4103-9695-00c944e3befd)
-
-- Change Password: ![image](https://github.com/user-attachments/assets/19ce772a-4ee7-44fc-8d05-c5ec65dc1738)
 
 ## Help Page
 
-![image](https://github.com/user-attachments/assets/7e0c99d7-8780-401f-aa59-34d392bf46b0)
+![image](https://github.com/user-attachments/assets/8c4854d0-fbf3-4919-a186-25bbe19397c2)
+
 
 ## Some Small Features
 
@@ -40,6 +43,7 @@
 
 ## Guard (Error page)
 
-![image](https://github.com/user-attachments/assets/8e095c9e-a7a7-43fa-8106-b1d58faa737b)
+![image](https://github.com/user-attachments/assets/7b719aae-59dd-47e6-92fd-40da89c56746)
+
 
 
