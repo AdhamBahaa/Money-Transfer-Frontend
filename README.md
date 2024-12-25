@@ -1,14 +1,8 @@
 # Speedo Transfer
 
-## Landing page
-
-![image](https://github.com/user-attachments/assets/78a29bf1-be9a-4284-a9e4-9444f22554cc)
-
-
 ## Regesiter and Login Page
 
-![image](https://github.com/user-attachments/assets/f912757d-6251-4a1c-af5c-c5fb6995153e) 
-![image](https://github.com/user-attachments/assets/4bde9098-2e8f-47f7-8fb2-04803446c508)
+![image](https://github.com/user-attachments/assets/f912757d-6251-4a1c-af5c-c5fb6995153e) ![image](https://github.com/user-attachments/assets/4bde9098-2e8f-47f7-8fb2-04803446c508)
 
 
 ## Home Page
@@ -18,11 +12,7 @@
 
 ## Money Transfer
 
-1. Amount: ![image](https://github.com/user-attachments/assets/6b8b9ab7-54d0-4d4e-ab56-ea0369f62919)
-
-2. Confirmation: ![image](https://github.com/user-attachments/assets/400682b8-6db8-42ab-b40e-14220b410d2e)
-
-3. Payment: ![image](https://github.com/user-attachments/assets/1d5e611e-b701-4cbe-a900-b6c6228f499f)
+![image](https://github.com/user-attachments/assets/6b8b9ab7-54d0-4d4e-ab56-ea0369f62919) ![image](https://github.com/user-attachments/assets/400682b8-6db8-42ab-b40e-14220b410d2e) ![image](https://github.com/user-attachments/assets/1d5e611e-b701-4cbe-a900-b6c6228f499f)
 
 
 ## My Account Page
