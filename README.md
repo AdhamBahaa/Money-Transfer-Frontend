@@ -31,9 +31,8 @@
 
 ## Some Small Features
 
-![image](https://github.com/user-attachments/assets/e50c9ec1-221f-418a-b8fb-bd03c6f3787b)
+![image](https://github.com/user-attachments/assets/f17d3c56-2771-4a0b-b5da-575e6039e669) ![image](https://github.com/user-attachments/assets/9a99399d-f74d-4eac-94eb-a6ea63407fc0)
 
-![image](https://github.com/user-attachments/assets/1bc70ff0-5301-4a93-b5e0-8b9a144964fc)
 
 ## Inactive User 
 
